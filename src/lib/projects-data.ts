@@ -57,7 +57,7 @@ export const projects: Project[] = [
       "An AI powered WhatsApp waiter for a restaurant that handles the entire ordering process end to end, from answering menu questions to notifying the kitchen with no staff involvement.",
     tags: ["n8n", "WhatsApp", "Google Gemini", "Supabase", "Google Sheets", "Telegram"],
     problem:
-      "Restaurants weren't losing customers over food quality — they were losing them in chats staff couldn't keep up with. The same questions got answered over and over, and every order had to be manually taken and tracked, pulling staff away from the floor and slowing down service during busy hours.",
+      "Restaurants weren't losing customers over food quality, they were losing them in chats staff couldn't keep up with. The same questions got answered over and over, and every order had to be manually taken and tracked, pulling staff away from the floor and slowing down service during busy hours.",
     process: [
       "A customer messages on WhatsApp and the AI responds immediately, answering questions using a fixed knowledge base and handling the conversation like a human waiter would.",
       "The AI takes the order, asks for the customer's name and phone number, and confirms pickup or delivery — collecting the address only if delivery is chosen.",
