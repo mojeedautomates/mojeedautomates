@@ -24,6 +24,16 @@ import order2 from "../assets/projects/Order_2.png.asset.json";
 import order3 from "../assets/projects/Order_3.png.asset.json";
 import order4 from "../assets/projects/Order_4.png.asset.json";
 import order5 from "../assets/projects/Order_5.png.asset.json";
+import lead from "../assets/projects/Lead.png.asset.json";
+import lead1 from "../assets/projects/Lead_1.png.asset.json";
+import lead2 from "../assets/projects/Lead_2.png.asset.json";
+import bmlGrant from "../assets/projects/BML_Grant.png.asset.json";
+import bmlGrant1 from "../assets/projects/BML_Grant_1.png.asset.json";
+import bmlGrant2 from "../assets/projects/BML_Grant_2.png.asset.json";
+import bmlGrant3 from "../assets/projects/BML_Grant_3.png.asset.json";
+import bmlGrant4 from "../assets/projects/BML_Grant_4.png.asset.json";
+import bmlGrant5 from "../assets/projects/BML_Grant_5.png.asset.json";
+import bmlGrant9 from "../assets/projects/BML_Grant_9.png.asset.json";
 
 export type Project = {
   id: string;
