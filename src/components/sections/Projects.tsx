@@ -50,7 +50,6 @@ export function ProjectsSection({ preview = false }: Props) {
                   src={p.cover}
                   alt={`${p.title} workflow diagram`}
                   className="w-full h-full object-contain"
-                  style={{ filter: "brightness(0) invert(1)" }}
                   loading="lazy"
                 />
               </div>
