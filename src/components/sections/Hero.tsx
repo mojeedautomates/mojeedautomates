@@ -36,24 +36,24 @@ export function Hero() {
             <span className="text-gradient-gold">Automation Specialist</span>
           </h1>
           <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
-            I build AI agents, custom RAG systems, and end-to-end automations for
-            businesses drowning in manual work — connecting their tools, data, and
+            I build AI agents, custom RAG systems, and end to end automations for
+            businesses drowning in manual work, connecting their tools, data, and
             workflows into one system that runs on its own.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link
-              to="/projects"
+              to="/contact"
               className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition-all hover:shadow-glow hover:brightness-110"
               style={{ backgroundColor: "#7B5EA7", boxShadow: "0 8px 24px -12px rgba(123,94,167,0.6)" }}
             >
-              View My Work
+              Start a Project
               <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
             </Link>
             <Link
-              to="/contact"
+              to="/projects"
               className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.06] backdrop-blur px-6 py-3 text-sm font-semibold text-white hover:bg-white/[0.12] hover:border-white/30 transition-colors"
             >
-              Start a Project
+              View My Work
             </Link>
           </div>
         </div>
