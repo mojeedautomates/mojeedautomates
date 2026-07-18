@@ -1,0 +1,219 @@
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { ArrowLeft, ArrowRight, Target, Cog, Sparkles, TrendingUp } from "lucide-react";
+import { projects } from "../lib/projects-data";
+import { Reveal } from "../components/Reveal";
+
+export const Route = createFileRoute("/projects/$id")({
+  loader: ({ params }) => {
+    const project = projects.find((p) => p.id === params.id);
+    if (!project) throw notFound();
+    return { project };
+  },
+  head: ({ loaderData }) => {
+    if (!loaderData) {
+      return {
+        meta: [
+          { title: "Project not found — Mojeed Automates" },
+          { name: "robots", content: "noindex" },
+        ],
+      };
+    }
+    return {
+      meta: [
+        { title: `${loaderData.project.title} — Mojeed Automates` },
+        { name: "description", content: loaderData.project.description },
+        { property: "og:title", content: loaderData.project.title },
+        { property: "og:description", content: loaderData.project.description },
+      ],
+    };
+  },
+  notFoundComponent: ProjectNotFound,
+  component: ProjectDetail,
+});
+
+function ProjectNotFound() {
+  return (
+    <div className="mx-auto max-w-3xl px-6 py-24 text-center pt-32">
+      <h1 className="text-4xl font-bold">Project not found</h1>
+      <p className="mt-4 text-muted-foreground">
+        This project doesn't exist or was moved.
+      </p>
+      <Link
+        to="/projects"
+        className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold"
+      >
+        <ArrowLeft size={14} /> Back to Projects
+      </Link>
+    </div>
+  );
+}
+
+function ProjectDetail() {
+  const { project } = Route.useLoaderData();
+  const idx = projects.findIndex((p) => p.id === project.id);
+  const next = projects[(idx + 1) % projects.length];
+
+  return (
+    <div className="pt-16">
+      {/* Banner */}
+      <section className="relative bg-gradient-hero">
+        <div
+          aria-hidden
+          className="absolute inset-0 opacity-60"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 20% 30%, oklch(0.55 0.14 300 / 0.35), transparent 50%)",
+          }}
+        />
+        <div className="relative mx-auto max-w-5xl px-6 py-20 sm:py-24">
+          <Link
+            to="/projects"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <ArrowLeft size={14} /> Back to Projects
+          </Link>
+          <h1 className="mt-6 text-4xl sm:text-6xl font-bold tracking-tight max-w-3xl">
+            {project.title}
+          </h1>
+          <p className="mt-5 text-lg text-muted-foreground max-w-2xl leading-relaxed">
+            {project.description}
+          </p>
+          <div className="mt-8 flex flex-wrap gap-2">
+            {project.tags.map((t: string) => (
+              <span
+                key={t}
+                className="text-xs px-3 py-1 rounded-full bg-white/5 backdrop-blur border border-white/15 font-medium"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Cover diagram */}
+      <section className="mx-auto max-w-5xl px-6 pt-16">
+        <Reveal>
+          <div className="rounded-3xl overflow-hidden border border-border p-6 sm:p-10 bg-card">
+            <img
+              src={project.cover}
+              alt={`${project.title} workflow diagram`}
+              className="w-full h-auto"
+              style={{ filter: "invert(0.92) hue-rotate(180deg)" }}
+            />
+          </div>
+        </Reveal>
+      </section>
+
+      {/* Problem / Process / Result */}
+      <section className="mx-auto max-w-5xl px-6 py-16 grid gap-6 md:grid-cols-3">
+        {[
+          { icon: Target, label: "Problem", body: project.problem },
+          {
+            icon: Cog,
+            label: "Process",
+            body: (
+              <ol className="space-y-3 list-decimal list-inside">
+                {project.process.map((step: string, i: number) => (
+                  <li key={i} className="text-sm leading-relaxed">
+                    {step}
+                  </li>
+                ))}
+              </ol>
+            ),
+          },
+          { icon: Sparkles, label: "Result", body: project.result },
+        ].map((s, i) => (
+          <Reveal key={s.label} delay={i * 80}>
+            <div className="h-full rounded-2xl border border-border bg-card p-7">
+              <div className="w-11 h-11 rounded-xl bg-primary/10 text-primary grid place-items-center">
+                <s.icon size={20} />
+              </div>
+              <div className="mt-5 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                {s.label}
+              </div>
+              {typeof s.body === "string" ? (
+                <p className="mt-2 text-sm leading-relaxed">{s.body}</p>
+              ) : (
+                <div className="mt-2">{s.body}</div>
+              )}
+            </div>
+          </Reveal>
+        ))}
+      </section>
+
+      {/* Impact */}
+      <section className="mx-auto max-w-5xl px-6 pb-16">
+        <Reveal>
+          <div className="rounded-3xl bg-card border border-border p-10 sm:p-14 shadow-elegant relative overflow-hidden">
+            <div
+              aria-hidden
+              className="absolute -top-16 -right-16 w-64 h-64 rounded-full opacity-30"
+              style={{ background: "radial-gradient(circle, #7B5EA7, transparent 70%)" }}
+            />
+            <div className="relative flex items-start gap-5">
+              <div className="w-12 h-12 rounded-xl bg-primary/15 text-primary grid place-items-center shrink-0">
+                <TrendingUp size={22} />
+              </div>
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-widest text-[#7B5EA7]">
+                  Business Impact
+                </div>
+                <p className="mt-2 text-xl sm:text-2xl font-semibold leading-snug">
+                  {project.impact}
+                </p>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* Screenshots */}
+      {project.screenshots && project.screenshots.length > 0 && (
+        <section className="mx-auto max-w-5xl px-6 pb-16">
+          <Reveal>
+            <div className="text-xs font-semibold uppercase tracking-widest text-[#7B5EA7]">
+              A look inside
+            </div>
+            <h2 className="mt-2 text-2xl sm:text-3xl font-bold">Screenshots</h2>
+          </Reveal>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2">
+            {project.screenshots.map((s: { url: string; caption?: string }, i: number) => (
+              <Reveal key={i} delay={i * 60}>
+                <figure className="rounded-2xl overflow-hidden border border-border bg-card">
+                  <div className="bg-white">
+                    <img src={s.url} alt={s.caption ?? project.title} className="w-full h-auto" />
+                  </div>
+                  {s.caption && (
+                    <figcaption className="px-5 py-3 text-xs text-muted-foreground border-t border-border">
+                      {s.caption}
+                    </figcaption>
+                  )}
+                </figure>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Next */}
+      <section className="mx-auto max-w-5xl px-6 pb-24">
+        <Link
+          to="/projects/$id"
+          params={{ id: next.id }}
+          className="group flex items-center justify-between rounded-2xl border border-border bg-card p-7 hover:border-primary/40 hover:shadow-elegant transition-all"
+        >
+          <div>
+            <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+              Next Project
+            </div>
+            <div className="mt-1 text-lg font-semibold group-hover:text-primary transition-colors">
+              {next.title}
+            </div>
+          </div>
+          <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+        </Link>
+      </section>
+    </div>
+  );
+}
