@@ -111,7 +111,7 @@ export const projects: Project[] = [
     id: "instant-lead-capture",
     title: "Instant Lead Capture & Response",
     description:
-      "A custom-built website and automated backend for a construction, roofing, and plumbing company. Designed to score, quote and respond to estimate requests in under 60 seconds — while general contact form submissions get an instant acknowledgment.",
+      "A custom built website and automated backend for a construction, roofing, and plumbing company. Designed to score, quote and respond to estimate requests in under 60 seconds while general contact form submissions get an instant acknowledgment.",
     tags: ["n8n", "Google Sheets", "Google Drive", "Gmail", "Slack"],
     problem:
       "Estimate requests and general enquiries were arriving through the site with no consistent response window. Motivated buyers ready to book would move on to a competitor before the team saw the message, and general enquiries often sat unanswered long enough that people assumed the form hadn't submitted.",
