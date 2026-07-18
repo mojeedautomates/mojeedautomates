@@ -74,7 +74,7 @@ function ContactForm({ heading }: { heading?: string }) {
   return (
     <form
       onSubmit={submit}
-      className="rounded-3xl border border-border bg-card p-8 shadow-elegant"
+      className="relative rounded-3xl border border-border bg-card p-8 shadow-elegant"
     >
       {heading && (
         <div className="mb-6 text-center">
