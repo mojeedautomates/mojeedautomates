@@ -182,7 +182,7 @@ export const projects: Project[] = [
     result:
       "An end to end automated collection framework that eliminates manual tracking entirely. The pipeline tracks payment status, isolates overdue accounts, and uses AI to generate and send custom, escalating email sequences that protect client relationships while accelerating payment.",
     impact:
-      "Faster average follow-up — reminders go out the day an account crosses a threshold, not whenever someone gets to it. ~10 hours/week returned to the finance team.",
+      "Faster average follow up. Reminders go out the day an account crosses a threshold, not whenever someone gets to it. ~10 hours/week returned to the finance team.",
     cover: invoiceCover,
     coverColor: "#2563EB",
     screenshots: [
