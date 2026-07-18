@@ -84,7 +84,7 @@ export const projects: Project[] = [
     id: "lead-generation-engine",
     title: "Lead Generation & Outreach Engine",
     description:
-      "An automated outbound pipeline that identifies high-value prospects, generates personalized cold outreach, and manages a structured follow-up sequence. It automatically stops the moment a lead replies.",
+      "An automated outbound pipeline that identifies high value prospects, generates personalized cold outreach, and manages a structured follow up sequence. It automatically stops the moment a lead replies.",
     tags: ["n8n", "Google Sheets", "Apify", "Firecrawl", "OpenAI", "Gmail"],
     problem:
       "Manually identifying prospects, verifying contact details, and drafting individual outreach emails was slow and limited outbound volume. Tracking who had been followed up with, and when, was inconsistent. This caused warm leads to go cold from missed timing, and sometimes led to active conversations getting an automated follow-up after the lead had already replied.",
