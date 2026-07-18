@@ -151,7 +151,7 @@ export const projects: Project[] = [
       "Errors are flagged automatically if anything fails.",
     ],
     result:
-      "A single form submission now sets up everything a new client needs — a CRM profile, a project board, a folder structure, and a welcome email — in minutes instead of hours, with no manual data entry and no missed steps.",
+      "A single form submission now sets up everything a new client needs, a CRM profile, a project board, a folder structure, and a welcome email in minutes instead of hours, with no manual data entry and no missed steps.",
     impact:
       "Every new client gets the same consistent, professional onboarding experience regardless of who's on staff that day. The setup work that used to take a team member an hour or more across multiple tools now happens automatically, freeing them to focus on the client relationship instead of admin work.",
     cover: onboardingCover,
