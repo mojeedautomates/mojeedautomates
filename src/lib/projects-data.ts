@@ -101,6 +101,11 @@ export const projects: Project[] = [
       "No lead goes cold from missed timing, and no lead gets a follow-up after they have already replied. About 15 hours a week are returned to the team — previously spent manually auditing sites, writing individual emails, and tracking who needed a follow-up.",
     cover: leadgenCover,
     coverColor: "#9333EA",
+    screenshots: [
+      { url: lead.url, caption: "n8n workflow — Lead Gen + Outreach" },
+      { url: lead1.url, caption: "Follow-up scheduler workflow" },
+      { url: lead2.url, caption: "Automation Lead sheet" },
+    ],
   },
   {
     id: "instant-lead-capture",
