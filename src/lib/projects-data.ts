@@ -122,7 +122,7 @@ export const projects: Project[] = [
       "The crew is alerted in the team's messaging app with the relevant lead details.",
     ],
     result:
-      "Every visitor who fills out a form on the site — whether requesting a quote or just reaching out — gets an immediate response. Estimate requests get a full branded quote in under 60 seconds, and general enquiries get instant confirmation that their message landed, with zero manual work on the company's end.",
+      "Every visitor who fills out a form on the site whether requesting a quote or just reaching out gets an immediate response. Estimate requests get a full branded quote in under 60 seconds, and general enquiries get instant confirmation that their message landed, with zero manual work on the company's end.",
     impact:
       "No visitor is left wondering if their form actually submitted. Motivated buyers get locked in before competitors even see the enquiry, and the crew stays focused on fieldwork instead of chasing down or reassuring leads manually.",
     cover: instantCover,
