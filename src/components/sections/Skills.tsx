@@ -65,7 +65,7 @@ export function Skills() {
             Skills
           </div>
           <h2 className="mt-3 text-4xl sm:text-5xl font-bold tracking-tight max-w-3xl mx-auto">
-            The Stack Behind The <span className="text-[#7B5EA7]">Systems</span>.
+            The Stack Behind The <span className="text-[#7B5EA7]">Systems.</span>
           </h2>
           <p className="mt-5 text-muted-foreground max-w-2xl mx-auto">
             A focused toolkit chosen for reliability, not novelty. Everything here has
