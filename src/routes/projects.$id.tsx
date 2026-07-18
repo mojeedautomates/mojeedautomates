@@ -78,8 +78,25 @@ function ProjectNotFound() {
 function ProjectDetail() {
   const { project } = Route.useLoaderData();
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [copied, setCopied] = useState(false);
   const idx = projects.findIndex((p) => p.id === project.id);
   const next = projects[(idx + 1) % projects.length];
+
+  const shareProject = async () => {
+    const url = typeof window !== "undefined" ? window.location.href : "";
+    try {
+      // Prefer the native share sheet on mobile if available
+      if (typeof navigator !== "undefined" && (navigator as any).share && /Mobi|Android/i.test(navigator.userAgent)) {
+        await (navigator as any).share({ title: project.title, text: project.description, url });
+        return;
+      }
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(false);
+    }
+  };
 
   return (
     <div className="pt-16">
@@ -94,12 +111,26 @@ function ProjectDetail() {
           }}
         />
         <div className="relative mx-auto max-w-5xl px-6 py-20 sm:py-24">
-          <Link
-            to="/projects"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft size={14} /> Back to Projects
-          </Link>
+          <div className="flex items-center justify-between gap-4 flex-wrap">
+            <Link
+              to="/projects"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <ArrowLeft size={14} /> Back to Projects
+            </Link>
+            <button
+              type="button"
+              onClick={shareProject}
+              aria-live="polite"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.06] backdrop-blur px-4 py-2 text-xs font-semibold text-white hover:bg-white/[0.12] hover:border-white/30 transition-colors"
+            >
+              {copied ? (
+                <><CheckIcon size={14} /> Link copied</>
+              ) : (
+                <><Share2 size={14} /> Copy link</>
+              )}
+            </button>
+          </div>
           <h1 className="mt-6 text-4xl sm:text-6xl font-bold tracking-tight max-w-3xl">
             {project.title}
           </h1>
