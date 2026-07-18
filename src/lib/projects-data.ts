@@ -54,7 +54,7 @@ export const projects: Project[] = [
     id: "whatsapp-ordering-agent",
     title: "WhatsApp Ordering AI Agent",
     description:
-      "An AI powered WhatsApp waiter for a restaurant that handles the entire ordering process end to end — from answering menu questions to notifying the kitchen — with no staff involvement.",
+      "An AI powered WhatsApp waiter for a restaurant that handles the entire ordering process end to end, from answering menu questions to notifying the kitchen with no staff involvement.",
     tags: ["n8n", "WhatsApp", "Google Gemini", "Supabase", "Google Sheets", "Telegram"],
     problem:
       "Restaurants weren't losing customers over food quality — they were losing them in chats staff couldn't keep up with. The same questions got answered over and over, and every order had to be manually taken and tracked, pulling staff away from the floor and slowing down service during busy hours.",
