@@ -170,9 +170,19 @@ function ProjectDetail() {
             {project.screenshots.map((s: { url: string; caption?: string }, i: number) => (
               <Reveal key={i} delay={i * 60}>
                 <figure className="rounded-2xl overflow-hidden border border-border bg-card">
-                  <div className="bg-white">
-                    <img src={s.url} alt={s.caption ?? project.title} className="w-full h-auto" />
-                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setLightboxIndex(i)}
+                    className="group relative block w-full bg-white overflow-hidden"
+                    aria-label={`Open ${s.caption ?? "screenshot"} full size`}
+                  >
+                    <img src={s.url} alt={s.caption ?? project.title} className="w-full h-auto transition-transform group-hover:scale-[1.02]" />
+                    <span className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                      <span className="opacity-0 group-hover:opacity-100 transition-opacity w-11 h-11 rounded-full bg-white/90 text-black grid place-items-center">
+                        <Maximize2 size={18} />
+                      </span>
+                    </span>
+                  </button>
                   {s.caption && (
                     <figcaption className="px-5 py-3 text-xs text-muted-foreground border-t border-border">
                       {s.caption}
@@ -183,6 +193,15 @@ function ProjectDetail() {
             ))}
           </div>
         </section>
+      )}
+
+      {lightboxIndex !== null && project.screenshots && (
+        <Lightbox
+          images={project.screenshots}
+          index={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+          onNav={setLightboxIndex}
+        />
       )}
 
       {/* Next */}
