@@ -1,9 +1,11 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowLeft, ArrowRight, Target, Cog, Sparkles, TrendingUp, Maximize2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, Target, Cog, Sparkles, TrendingUp, Maximize2, Share2, Check as CheckIcon } from "lucide-react";
 import { projects } from "../lib/projects-data";
 import { Reveal } from "../components/Reveal";
 import { Lightbox } from "../components/Lightbox";
+
+const SITE_URL = "https://mojeed-automates-space.lovable.app";
 
 export const Route = createFileRoute("/projects/$id")({
   loader: ({ params }) => {
@@ -11,7 +13,7 @@ export const Route = createFileRoute("/projects/$id")({
     if (!project) throw notFound();
     return { project };
   },
-  head: ({ loaderData }) => {
+  head: ({ loaderData, params }) => {
     if (!loaderData) {
       return {
         meta: [
@@ -20,12 +22,35 @@ export const Route = createFileRoute("/projects/$id")({
         ],
       };
     }
+    const url = `${SITE_URL}/projects/${params.id}`;
     return {
       meta: [
         { title: `${loaderData.project.title} — Mojeed Automates` },
         { name: "description", content: loaderData.project.description },
         { property: "og:title", content: loaderData.project.title },
         { property: "og:description", content: loaderData.project.description },
+        { property: "og:url", content: url },
+        { property: "og:type", content: "article" },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CreativeWork",
+            name: loaderData.project.title,
+            description: loaderData.project.description,
+            url,
+            keywords: loaderData.project.tags.join(", "),
+            author: {
+              "@type": "Person",
+              name: "Mojeed Salisu",
+              jobTitle: "AI Automation Specialist",
+              url: SITE_URL,
+            },
+          }),
+        },
       ],
     };
   },
