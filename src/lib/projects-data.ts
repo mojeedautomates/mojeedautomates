@@ -68,7 +68,7 @@ export const projects: Project[] = [
     result:
       "Every customer gets a fast, natural ordering experience without waiting on staff, every order lands in the kitchen structured and accurate, and requests for anything outside the menu are handled professionally instead of guessed at.",
     impact:
-      "The restaurant can handle more orders at once without adding staff. Customers get a consistent, human-like experience any time of day, and the kitchen receives clean, ready-to-execute orders instead of chasing down details mid-rush.",
+      "The restaurant can handle more orders at once without adding staff. Customers get a consistent, human like experience any time of day, and the kitchen receives clean, ready to execute orders instead of chasing down details mid rush.",
     cover: whatsappCover,
     coverColor: "#3B82F6",
     screenshots: [
