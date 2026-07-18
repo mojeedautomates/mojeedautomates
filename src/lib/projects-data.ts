@@ -18,6 +18,12 @@ import logicOn1 from "../assets/projects/logic_on1.png.asset.json";
 import logicOn2 from "../assets/projects/logic_on2.png.asset.json";
 import logicOn5 from "../assets/projects/logic_on5.png.asset.json";
 import logicOn6 from "../assets/projects/logic_on6.png.asset.json";
+import order from "../assets/projects/Order.png.asset.json";
+import order1 from "../assets/projects/Order_1.png.asset.json";
+import order2 from "../assets/projects/Order_2.png.asset.json";
+import order3 from "../assets/projects/Order_3.png.asset.json";
+import order4 from "../assets/projects/Order_4.png.asset.json";
+import order5 from "../assets/projects/Order_5.png.asset.json";
 
 export type Project = {
   id: string;
@@ -29,6 +35,7 @@ export type Project = {
   result: string;
   impact: string;
   cover: string;
+  coverColor: string;
   screenshots?: { url: string; caption?: string }[];
 };
 
@@ -53,6 +60,15 @@ export const projects: Project[] = [
     impact:
       "The restaurant can handle more orders at once without adding staff. Customers get a consistent, human-like experience any time of day, and the kitchen receives clean, ready-to-execute orders instead of chasing down details mid-rush.",
     cover: whatsappCover,
+    coverColor: "#3B82F6",
+    screenshots: [
+      { url: order.url, caption: "n8n workflow — BML Restaurant Chat Assistant" },
+      { url: order1.url, caption: "Kitchen Timer workflow" },
+      { url: order3.url, caption: "Order Editable workflow" },
+      { url: order5.url, caption: "Restaurant Orders sheet" },
+      { url: order4.url, caption: "WhatsApp order confirmation" },
+      { url: order2.url, caption: "Kitchen Telegram notification" },
+    ],
   },
   {
     id: "lead-generation-engine",
@@ -74,6 +90,7 @@ export const projects: Project[] = [
     impact:
       "No lead goes cold from missed timing, and no lead gets a follow-up after they have already replied. About 15 hours a week are returned to the team — previously spent manually auditing sites, writing individual emails, and tracking who needed a follow-up.",
     cover: leadgenCover,
+    coverColor: "#9333EA",
   },
   {
     id: "instant-lead-capture",
@@ -94,6 +111,7 @@ export const projects: Project[] = [
     impact:
       "No visitor is left wondering if their form actually submitted. Motivated buyers get locked in before competitors even see the enquiry, and the crew stays focused on fieldwork instead of chasing down or reassuring leads manually.",
     cover: instantCover,
+    coverColor: "#C026D3",
     screenshots: [
       { url: estimate1.url, caption: "n8n workflow — Estimate & Follow Up" },
       { url: estimate2.url, caption: "Website estimate request form" },
@@ -122,6 +140,7 @@ export const projects: Project[] = [
     impact:
       "Every new client gets the same consistent, professional onboarding experience regardless of who's on staff that day. The setup work that used to take a team member an hour or more across multiple tools now happens automatically, freeing them to focus on the client relationship instead of admin work.",
     cover: onboardingCover,
+    coverColor: "#4338CA",
     screenshots: [
       { url: logicOn6.url, caption: "n8n workflow — Logic Layer Onboarding" },
       { url: logicOn1.url, caption: "Airtable client & project board" },
@@ -150,6 +169,7 @@ export const projects: Project[] = [
     impact:
       "Faster average follow-up — reminders go out the day an account crosses a threshold, not whenever someone gets to it. ~10 hours/week returned to the finance team.",
     cover: invoiceCover,
+    coverColor: "#2563EB",
     screenshots: [
       { url: bmlInvoice.url, caption: "n8n workflow — BML Invoice Collection System" },
       { url: bmlInvoice2.url, caption: "Invoice tracking sheet" },
@@ -175,5 +195,6 @@ export const projects: Project[] = [
     impact:
       "Grants that match the hospital's criteria get identified and flagged consistently, instead of relying on manual research that can miss high-value opportunities. Application drafts are ready in minutes instead of weeks, freeing healthcare staff to stay focused on clinical work.",
     cover: grantCover,
+    coverColor: "#A855F7",
   },
 ];

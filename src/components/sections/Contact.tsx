@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Check, Mail, Send } from "lucide-react";
+import { Check, Mail, Send, AlertCircle } from "lucide-react";
 import { Reveal } from "../Reveal";
 
 type Props = {
@@ -7,16 +7,43 @@ type Props = {
   formOnly?: boolean;
 };
 
+const WEBHOOK_URL =
+  "https://n8n.srv1290655.hstgr.cloud/webhook/b3f0f789-3735-4c8a-8240-52e4fc3d325f";
+
+type Status = "idle" | "sending" | "sent" | "error";
+
 function ContactForm({ heading }: { heading?: string }) {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
-    setForm({ name: "", email: "", message: "" });
-    setTimeout(() => setSent(false), 4000);
+    if (status === "sending") return;
+    setStatus("sending");
+    try {
+      const res = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          Name: form.name,
+          Email: form.email,
+          Message: form.message,
+          submittedAt: new Date().toISOString(),
+          source: "portfolio-contact-form",
+        }),
+      });
+      if (!res.ok) throw new Error(`Request failed: ${res.status}`);
+      setStatus("sent");
+      setForm({ name: "", email: "", message: "" });
+      setTimeout(() => setStatus("idle"), 5000);
+    } catch (err) {
+      console.error("Contact form submission failed", err);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
   };
+
+  const sending = status === "sending";
 
   return (
     <form
@@ -69,19 +96,22 @@ function ContactForm({ heading }: { heading?: string }) {
         </div>
         <button
           type="submit"
-          disabled={sent}
-          className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold hover:opacity-90 disabled:opacity-70 transition-opacity"
+          disabled={sending || status === "sent"}
+          className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold hover:opacity-90 disabled:opacity-60 disabled:cursor-not-allowed transition-opacity"
         >
-          {sent ? (
-            <>
-              <Check size={16} /> Message sent
-            </>
+          {status === "sent" ? (
+            <><Check size={16} /> Thanks, I'll be in touch shortly</>
+          ) : sending ? (
+            <>Sending…</>
           ) : (
-            <>
-              Send Message <Send size={14} />
-            </>
+            <>Send Message <Send size={14} /></>
           )}
         </button>
+        {status === "error" && (
+          <p className="text-sm text-destructive flex items-center gap-2">
+            <AlertCircle size={14} /> Something went wrong sending your message. Please try again or email me directly.
+          </p>
+        )}
       </div>
     </form>
   );
@@ -107,10 +137,10 @@ export function Contact({ formOnly = false }: Props) {
               CONTACT
             </div>
             <h2 className="mt-3 text-4xl sm:text-5xl font-bold tracking-tight">
-              Let's Build Something That{" "}
-              <span className="text-gradient-gold">Runs Itself.</span>
+              Let's Build Something{" "}
+              <span className="text-[#7B5EA7]">That Runs Itself.</span>
             </h2>
-            <p className="mt-5 text-muted-foreground max-w-md leading-relaxed mx-auto lg:mx-0">
+            <p className="mt-5 text-muted-foreground max-w-2xl mx-auto lg:mx-0 lg:max-w-md leading-relaxed">
               Tell me about the workflow that's eating your week. I'll come back with a
               plan for how to automate it, what it'll cost, and how long it takes.
             </p>

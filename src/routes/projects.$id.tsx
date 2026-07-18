@@ -1,7 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight, Target, Cog, Sparkles, TrendingUp } from "lucide-react";
+import { useState } from "react";
+import { ArrowLeft, ArrowRight, Target, Cog, Sparkles, TrendingUp, Maximize2 } from "lucide-react";
 import { projects } from "../lib/projects-data";
 import { Reveal } from "../components/Reveal";
+import { Lightbox } from "../components/Lightbox";
 
 export const Route = createFileRoute("/projects/$id")({
   loader: ({ params }) => {
@@ -50,6 +52,7 @@ function ProjectNotFound() {
 
 function ProjectDetail() {
   const { project } = Route.useLoaderData();
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const idx = projects.findIndex((p) => p.id === project.id);
   const next = projects[(idx + 1) % projects.length];
 
@@ -91,22 +94,8 @@ function ProjectDetail() {
         </div>
       </section>
 
-      {/* Cover diagram */}
-      <section className="mx-auto max-w-5xl px-6 pt-16">
-        <Reveal>
-          <div className="rounded-3xl overflow-hidden border border-border p-6 sm:p-10 bg-card">
-            <img
-              src={project.cover}
-              alt={`${project.title} workflow diagram`}
-              className="w-full h-auto"
-              style={{ filter: "invert(0.92) hue-rotate(180deg)" }}
-            />
-          </div>
-        </Reveal>
-      </section>
-
       {/* Problem / Process / Result */}
-      <section className="mx-auto max-w-5xl px-6 py-16 grid gap-6 md:grid-cols-3">
+      <section className="mx-auto max-w-5xl px-6 pt-16 pb-16 grid gap-6 md:grid-cols-3">
         {[
           { icon: Target, label: "Problem", body: project.problem },
           {
@@ -181,9 +170,19 @@ function ProjectDetail() {
             {project.screenshots.map((s: { url: string; caption?: string }, i: number) => (
               <Reveal key={i} delay={i * 60}>
                 <figure className="rounded-2xl overflow-hidden border border-border bg-card">
-                  <div className="bg-white">
-                    <img src={s.url} alt={s.caption ?? project.title} className="w-full h-auto" />
-                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setLightboxIndex(i)}
+                    className="group relative block w-full bg-white overflow-hidden"
+                    aria-label={`Open ${s.caption ?? "screenshot"} full size`}
+                  >
+                    <img src={s.url} alt={s.caption ?? project.title} className="w-full h-auto transition-transform group-hover:scale-[1.02]" />
+                    <span className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                      <span className="opacity-0 group-hover:opacity-100 transition-opacity w-11 h-11 rounded-full bg-white/90 text-black grid place-items-center">
+                        <Maximize2 size={18} />
+                      </span>
+                    </span>
+                  </button>
                   {s.caption && (
                     <figcaption className="px-5 py-3 text-xs text-muted-foreground border-t border-border">
                       {s.caption}
@@ -194,6 +193,15 @@ function ProjectDetail() {
             ))}
           </div>
         </section>
+      )}
+
+      {lightboxIndex !== null && project.screenshots && (
+        <Lightbox
+          images={project.screenshots}
+          index={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+          onNav={setLightboxIndex}
+        />
       )}
 
       {/* Next */}
