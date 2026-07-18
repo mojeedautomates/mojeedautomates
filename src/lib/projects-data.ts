@@ -139,7 +139,7 @@ export const projects: Project[] = [
     id: "client-onboarding",
     title: "Client Onboarding & Fulfillment",
     description:
-      "An automated onboarding pipeline that takes a new client from form submission to a fully provisioned project setup — CRM profile, project board, shared drive, welcome email, and internal notification, all without manual setup work.",
+      "An automated onboarding pipeline that takes a new client from form submission to a fully provisioned project setup, CRM profile, project board, shared drive, welcome email, and internal notification, all without manual setup work.",
     tags: ["n8n", "Airtable", "Asana", "Google Drive", "Gmail", "Slack"],
     problem:
       "Onboarding a new client involved a long list of manual, repetitive setup tasks: creating CRM records, checking for duplicate client profiles, setting up a new project board from scratch, creating folder structures, assigning the right manager, and sending a welcome email. Each step took time, was easy to get wrong or skip, and pulled staff away from actual client work every time a new deal closed.",
