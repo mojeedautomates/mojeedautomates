@@ -40,12 +40,17 @@ export function ProjectsSection({ preview = false }: Props) {
               params={{ id: p.id }}
               className="group block h-full rounded-3xl overflow-hidden border border-border bg-card hover:shadow-elegant hover:border-primary/40 transition-all"
             >
-              <div className="aspect-[16/10] relative overflow-hidden flex items-center justify-center p-6 bg-card">
+              <div
+                className="aspect-[16/10] relative overflow-hidden flex items-center justify-center p-6"
+                style={{
+                  backgroundImage: `linear-gradient(135deg, color-mix(in oklab, ${p.coverColor} 55%, white) 0%, ${p.coverColor} 55%, color-mix(in oklab, ${p.coverColor} 70%, black) 100%)`,
+                }}
+              >
                 <img
                   src={p.cover}
                   alt={`${p.title} workflow diagram`}
                   className="w-full h-full object-contain"
-                  style={{ filter: "invert(0.92) hue-rotate(180deg)" }}
+                  style={{ filter: "brightness(0) invert(1)" }}
                   loading="lazy"
                 />
               </div>
