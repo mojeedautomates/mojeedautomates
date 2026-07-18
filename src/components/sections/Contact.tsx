@@ -85,6 +85,18 @@ function ContactForm({ heading }: { heading?: string }) {
         </div>
       )}
       <div className="grid gap-5">
+        {/* Honeypot — hidden from real users, catches bots */}
+        <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", width: 1, height: 1, overflow: "hidden" }}>
+          <label htmlFor="website">Website</label>
+          <input
+            id="website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={form.website}
+            onChange={(e) => setForm({ ...form, website: e.target.value })}
+          />
+        </div>
         <div>
           <label className="text-sm font-medium" htmlFor="name">Name</label>
           <input
@@ -133,9 +145,9 @@ function ContactForm({ heading }: { heading?: string }) {
             <>Send Message <Send size={14} /></>
           )}
         </button>
-        {status === "error" && (
+        {status === "error" && errorMsg && (
           <p className="text-sm text-destructive flex items-center gap-2">
-            <AlertCircle size={14} /> Something went wrong sending your message. Please try again or email me directly.
+            <AlertCircle size={14} /> {errorMsg}
           </p>
         )}
       </div>
