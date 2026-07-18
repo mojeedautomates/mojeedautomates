@@ -11,12 +11,12 @@ export function WhatIBuild() {
     {
       icon: Database,
       title: "RAG Pipelines",
-      body: "Custom knowledge systems trained on your docs, tickets, and SOPs — with citations, not guesses.",
+      body: "Custom knowledge systems trained on your docs, tickets, and SOPs with citations, not guesses.",
     },
     {
       icon: Workflow,
       title: "End-to-End Automations",
-      body: "Multi-step workflows connecting your CRM, forms, calendars, and databases into one system.",
+      body: "Multi step workflows connecting your CRM, forms, calendars, and databases into one system.",
     },
     {
       icon: Users,

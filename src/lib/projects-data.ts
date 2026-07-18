@@ -54,10 +54,10 @@ export const projects: Project[] = [
     id: "whatsapp-ordering-agent",
     title: "WhatsApp Ordering AI Agent",
     description:
-      "An AI powered WhatsApp waiter for a restaurant that handles the entire ordering process end to end — from answering menu questions to notifying the kitchen — with no staff involvement.",
+      "An AI powered WhatsApp waiter for a restaurant that handles the entire ordering process end to end, from answering menu questions to notifying the kitchen with no staff involvement.",
     tags: ["n8n", "WhatsApp", "Google Gemini", "Supabase", "Google Sheets", "Telegram"],
     problem:
-      "Restaurants weren't losing customers over food quality — they were losing them in chats staff couldn't keep up with. The same questions got answered over and over, and every order had to be manually taken and tracked, pulling staff away from the floor and slowing down service during busy hours.",
+      "Restaurants weren't losing customers over food quality, they were losing them in chats staff couldn't keep up with. The same questions got answered over and over, and every order had to be manually taken and tracked, pulling staff away from the floor and slowing down service during busy hours.",
     process: [
       "A customer messages on WhatsApp and the AI responds immediately, answering questions using a fixed knowledge base and handling the conversation like a human waiter would.",
       "The AI takes the order, asks for the customer's name and phone number, and confirms pickup or delivery — collecting the address only if delivery is chosen.",
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     result:
       "Every customer gets a fast, natural ordering experience without waiting on staff, every order lands in the kitchen structured and accurate, and requests for anything outside the menu are handled professionally instead of guessed at.",
     impact:
-      "The restaurant can handle more orders at once without adding staff. Customers get a consistent, human-like experience any time of day, and the kitchen receives clean, ready-to-execute orders instead of chasing down details mid-rush.",
+      "The restaurant can handle more orders at once without adding staff. Customers get a consistent, human like experience any time of day, and the kitchen receives clean, ready to execute orders instead of chasing down details mid rush.",
     cover: whatsappCover,
     coverColor: "#3B82F6",
     screenshots: [
@@ -84,7 +84,7 @@ export const projects: Project[] = [
     id: "lead-generation-engine",
     title: "Lead Generation & Outreach Engine",
     description:
-      "An automated outbound pipeline that identifies high-value prospects, generates personalized cold outreach, and manages a structured follow-up sequence. It automatically stops the moment a lead replies.",
+      "An automated outbound pipeline that identifies high value prospects, generates personalized cold outreach, and manages a structured follow up sequence. It automatically stops the moment a lead replies.",
     tags: ["n8n", "Google Sheets", "Apify", "Firecrawl", "OpenAI", "Gmail"],
     problem:
       "Manually identifying prospects, verifying contact details, and drafting individual outreach emails was slow and limited outbound volume. Tracking who had been followed up with, and when, was inconsistent. This caused warm leads to go cold from missed timing, and sometimes led to active conversations getting an automated follow-up after the lead had already replied.",
@@ -96,9 +96,9 @@ export const projects: Project[] = [
       "The system checks for a reply before each follow-up. Stops follow-ups if the lead has responded, and notifies the internal team to continue the conversation.",
     ],
     result:
-      "Raw prospect data is automatically turned into structured, ready-to-contact records, with a personalized outreach pitch generated and sent for every lead. A structured follow-up sequence runs after that, and hands off to a human as soon as a real conversation starts.",
+      "Raw prospect data is automatically turned into structured, ready to contact records, with a personalized outreach pitch generated and sent for every lead. A structured follow up sequence runs after that, and hands off to a human as soon as a real conversation starts.",
     impact:
-      "No lead goes cold from missed timing, and no lead gets a follow-up after they have already replied. About 15 hours a week are returned to the team — previously spent manually auditing sites, writing individual emails, and tracking who needed a follow-up.",
+      "No lead goes cold from missed timing, and no lead gets a follow up after they have already replied. About 15 hours a week are returned to the team previously auditing sites manually, writing individual emails, and tracking who needed a follow up.",
     cover: leadgenCover,
     coverColor: "#9333EA",
     screenshots: [
@@ -111,7 +111,7 @@ export const projects: Project[] = [
     id: "instant-lead-capture",
     title: "Instant Lead Capture & Response",
     description:
-      "A custom-built website and automated backend for a construction, roofing, and plumbing company. Designed to score, quote and respond to estimate requests in under 60 seconds — while general contact form submissions get an instant acknowledgment.",
+      "A custom built website and automated backend for a construction, roofing, and plumbing company. Designed to score, quote and respond to estimate requests in under 60 seconds while general contact form submissions get an instant acknowledgment.",
     tags: ["n8n", "Google Sheets", "Google Drive", "Gmail", "Slack"],
     problem:
       "Estimate requests and general enquiries were arriving through the site with no consistent response window. Motivated buyers ready to book would move on to a competitor before the team saw the message, and general enquiries often sat unanswered long enough that people assumed the form hadn't submitted.",
@@ -122,7 +122,7 @@ export const projects: Project[] = [
       "The crew is alerted in the team's messaging app with the relevant lead details.",
     ],
     result:
-      "Every visitor who fills out a form on the site — whether requesting a quote or just reaching out — gets an immediate response. Estimate requests get a full branded quote in under 60 seconds, and general enquiries get instant confirmation that their message landed, with zero manual work on the company's end.",
+      "Every visitor who fills out a form on the site whether requesting a quote or just reaching out gets an immediate response. Estimate requests get a full branded quote in under 60 seconds, and general enquiries get instant confirmation that their message landed, with zero manual work on the company's end.",
     impact:
       "No visitor is left wondering if their form actually submitted. Motivated buyers get locked in before competitors even see the enquiry, and the crew stays focused on fieldwork instead of chasing down or reassuring leads manually.",
     cover: instantCover,
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     id: "client-onboarding",
     title: "Client Onboarding & Fulfillment",
     description:
-      "An automated onboarding pipeline that takes a new client from form submission to a fully provisioned project setup — CRM profile, project board, shared drive, welcome email, and internal notification, all without manual setup work.",
+      "An automated onboarding pipeline that takes a new client from form submission to a fully provisioned project setup, CRM profile, project board, shared drive, welcome email, and internal notification, all without manual setup work.",
     tags: ["n8n", "Airtable", "Asana", "Google Drive", "Gmail", "Slack"],
     problem:
       "Onboarding a new client involved a long list of manual, repetitive setup tasks: creating CRM records, checking for duplicate client profiles, setting up a new project board from scratch, creating folder structures, assigning the right manager, and sending a welcome email. Each step took time, was easy to get wrong or skip, and pulled staff away from actual client work every time a new deal closed.",
@@ -151,7 +151,7 @@ export const projects: Project[] = [
       "Errors are flagged automatically if anything fails.",
     ],
     result:
-      "A single form submission now sets up everything a new client needs — a CRM profile, a project board, a folder structure, and a welcome email — in minutes instead of hours, with no manual data entry and no missed steps.",
+      "A single form submission now sets up everything a new client needs, a CRM profile, a project board, a folder structure, and a welcome email in minutes instead of hours, with no manual data entry and no missed steps.",
     impact:
       "Every new client gets the same consistent, professional onboarding experience regardless of who's on staff that day. The setup work that used to take a team member an hour or more across multiple tools now happens automatically, freeing them to focus on the client relationship instead of admin work.",
     cover: onboardingCover,
@@ -168,10 +168,10 @@ export const projects: Project[] = [
     id: "invoice-collection",
     title: "Invoice Collection Pipeline",
     description:
-      "A continuous accounts receivable pipeline that monitors invoice statuses, algorithmically calculates overdue thresholds, and dispatches hyper-personalized, AI-driven escalation emails at strict intervals to accelerate cash flow recovery.",
+      "A continuous accounts receivable pipeline that monitors invoice statuses, algorithmically calculates overdue thresholds, and dispatches hyper personalized, AI driven escalation emails at strict intervals to accelerate cash flow recovery.",
     tags: ["n8n", "Google Sheets", "Google Gemini", "Gmail"],
     problem:
-      "Organizations lose predictable cash flow and waste critical resources manually tracking overdue invoices. Traditional billing systems rely on static, easily ignored reminders that fail to address client-specific nuances. Without continuous oversight and structured escalation intervals, overdue balances compound, tracking gaps widen, and collections stall — directly harming operational liquidity.",
+      "Organizations lose predictable cash flow and waste critical resources manually tracking overdue invoices. Traditional billing systems rely on static, easily ignored reminders that fail to address client specific nuances. Without continuous oversight and structured escalation intervals, overdue balances compound, tracking gaps widen, and collections stall, directly harming operational liquidity.",
     process: [
       "Payment status is monitored continuously through a polling trigger.",
       "Days overdue are calculated and grouped into set intervals: 7, 14, 21, or 28 days.",
@@ -180,9 +180,9 @@ export const projects: Project[] = [
       "The database is updated to prevent duplicate tracking or repeat sends.",
     ],
     result:
-      "An end-to-end automated collection framework that eliminates manual tracking entirely. The pipeline tracks payment status, isolates overdue accounts, and uses AI to generate and send custom, escalating email sequences that protect client relationships while accelerating payment.",
+      "An end to end automated collection framework that eliminates manual tracking entirely. The pipeline tracks payment status, isolates overdue accounts, and uses AI to generate and send custom, escalating email sequences that protect client relationships while accelerating payment.",
     impact:
-      "Faster average follow-up — reminders go out the day an account crosses a threshold, not whenever someone gets to it. ~10 hours/week returned to the finance team.",
+      "Faster average follow up. Reminders go out the day an account crosses a threshold, not whenever someone gets to it. ~10 hours/week returned to the finance team.",
     cover: invoiceCover,
     coverColor: "#2563EB",
     screenshots: [
@@ -206,9 +206,9 @@ export const projects: Project[] = [
       "The AI agent evaluates compatibility and outputs a qualification score against a set compliance threshold.",
     ],
     result:
-      "The automation filters out low-scoring opportunities and maps high-value, highly compatible grants directly into a central tracking database. By replacing manual vetting with automated AI scoring, the system eliminates hours of manual research and ensures the hospital instantly prioritizes top-tier funding matches.",
+      "The automation filters out low scoring opportunities and maps high value, highly compatible grants directly into a central tracking database. By replacing manual vetting with automated AI scoring, the system eliminates hours of manual research and ensures the hospital instantly prioritizes top tier funding matches.",
     impact:
-      "Grants that match the hospital's criteria get identified and flagged consistently, instead of relying on manual research that can miss high-value opportunities. Application drafts are ready in minutes instead of weeks, freeing healthcare staff to stay focused on clinical work.",
+      "Grants that match the hospital's criteria get identified and flagged consistently, instead of relying on manual research that can miss high value opportunities. Application drafts are ready in minutes instead of weeks, freeing healthcare staff to stay focused on clinical work.",
     cover: grantCover,
     coverColor: "#A855F7",
     screenshots: [

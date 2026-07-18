@@ -10,7 +10,7 @@ export function Footer() {
             Mojeed <span className="text-[#7B5EA7]">Automates.</span>
           </div>
           <p className="text-sm text-muted-foreground mt-3 max-w-xs">
-            AI-powered automation that cuts manual work, reduces costs and grows revenue.
+            AI powered automation that cuts manual work, reduces costs and grows revenue.
           </p>
         </div>
         <div>
