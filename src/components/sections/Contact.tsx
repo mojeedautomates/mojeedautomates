@@ -14,12 +14,36 @@ type Status = "idle" | "sending" | "sent" | "error";
 
 function ContactForm({ heading }: { heading?: string }) {
   const [status, setStatus] = useState<Status>("idle");
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", message: "", website: "" });
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (status === "sending") return;
+
+    // Honeypot: bots typically fill hidden inputs. Silently succeed for them.
+    if (form.website.trim() !== "") {
+      setStatus("sent");
+      setForm({ name: "", email: "", message: "", website: "" });
+      setTimeout(() => setStatus("idle"), 5000);
+      return;
+    }
+
+    // Basic client-side rate limiting: block if a submission happened in the last 30s.
+    try {
+      const last = Number(localStorage.getItem("contact:lastSubmit") || 0);
+      if (last && Date.now() - last < 30_000) {
+        setErrorMsg("Please wait a few seconds before sending another message.");
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 5000);
+        return;
+      }
+    } catch {
+      // ignore storage errors
+    }
+
     setStatus("sending");
+    setErrorMsg(null);
     try {
       const res = await fetch(WEBHOOK_URL, {
         method: "POST",
@@ -33,11 +57,13 @@ function ContactForm({ heading }: { heading?: string }) {
         }),
       });
       if (!res.ok) throw new Error(`Request failed: ${res.status}`);
+      try { localStorage.setItem("contact:lastSubmit", String(Date.now())); } catch {}
       setStatus("sent");
-      setForm({ name: "", email: "", message: "" });
+      setForm({ name: "", email: "", message: "", website: "" });
       setTimeout(() => setStatus("idle"), 5000);
     } catch (err) {
       console.error("Contact form submission failed", err);
+      setErrorMsg("Something went wrong sending your message. Please try again or email me directly.");
       setStatus("error");
       setTimeout(() => setStatus("idle"), 5000);
     }
