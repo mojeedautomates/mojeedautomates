@@ -96,7 +96,7 @@ export const projects: Project[] = [
       "The system checks for a reply before each follow-up. Stops follow-ups if the lead has responded, and notifies the internal team to continue the conversation.",
     ],
     result:
-      "Raw prospect data is automatically turned into structured, ready-to-contact records, with a personalized outreach pitch generated and sent for every lead. A structured follow-up sequence runs after that, and hands off to a human as soon as a real conversation starts.",
+      "Raw prospect data is automatically turned into structured, ready to contact records, with a personalized outreach pitch generated and sent for every lead. A structured follow up sequence runs after that, and hands off to a human as soon as a real conversation starts.",
     impact:
       "No lead goes cold from missed timing, and no lead gets a follow-up after they have already replied. About 15 hours a week are returned to the team — previously spent manually auditing sites, writing individual emails, and tracking who needed a follow-up.",
     cover: leadgenCover,
