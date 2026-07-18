@@ -168,7 +168,7 @@ export const projects: Project[] = [
     id: "invoice-collection",
     title: "Invoice Collection Pipeline",
     description:
-      "A continuous accounts receivable pipeline that monitors invoice statuses, algorithmically calculates overdue thresholds, and dispatches hyper-personalized, AI-driven escalation emails at strict intervals to accelerate cash flow recovery.",
+      "A continuous accounts receivable pipeline that monitors invoice statuses, algorithmically calculates overdue thresholds, and dispatches hyper personalized, AI driven escalation emails at strict intervals to accelerate cash flow recovery.",
     tags: ["n8n", "Google Sheets", "Google Gemini", "Gmail"],
     problem:
       "Organizations lose predictable cash flow and waste critical resources manually tracking overdue invoices. Traditional billing systems rely on static, easily ignored reminders that fail to address client-specific nuances. Without continuous oversight and structured escalation intervals, overdue balances compound, tracking gaps widen, and collections stall — directly harming operational liquidity.",
