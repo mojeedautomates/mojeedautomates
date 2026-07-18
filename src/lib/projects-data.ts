@@ -211,5 +211,14 @@ export const projects: Project[] = [
       "Grants that match the hospital's criteria get identified and flagged consistently, instead of relying on manual research that can miss high-value opportunities. Application drafts are ready in minutes instead of weeks, freeing healthcare staff to stay focused on clinical work.",
     cover: grantCover,
     coverColor: "#A855F7",
+    screenshots: [
+      { url: bmlGrant.url, caption: "n8n workflow — Grant Scout + Match" },
+      { url: bmlGrant5.url, caption: "The Drafter workflow" },
+      { url: bmlGrant9.url, caption: "Scheduler + Reminder workflow" },
+      { url: bmlGrant3.url, caption: "Grant Details sheet" },
+      { url: bmlGrant1.url, caption: "Hospital profile sheet" },
+      { url: bmlGrant4.url, caption: "Grant–Hospital match tracker" },
+      { url: bmlGrant2.url, caption: "AI-drafted proposal notification" },
+    ],
   },
 ];
