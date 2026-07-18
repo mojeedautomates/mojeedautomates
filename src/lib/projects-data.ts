@@ -18,6 +18,12 @@ import logicOn1 from "../assets/projects/logic_on1.png.asset.json";
 import logicOn2 from "../assets/projects/logic_on2.png.asset.json";
 import logicOn5 from "../assets/projects/logic_on5.png.asset.json";
 import logicOn6 from "../assets/projects/logic_on6.png.asset.json";
+import order from "../assets/projects/Order.png.asset.json";
+import order1 from "../assets/projects/Order_1.png.asset.json";
+import order2 from "../assets/projects/Order_2.png.asset.json";
+import order3 from "../assets/projects/Order_3.png.asset.json";
+import order4 from "../assets/projects/Order_4.png.asset.json";
+import order5 from "../assets/projects/Order_5.png.asset.json";
 
 export type Project = {
   id: string;
@@ -29,6 +35,7 @@ export type Project = {
   result: string;
   impact: string;
   cover: string;
+  coverColor: string;
   screenshots?: { url: string; caption?: string }[];
 };
 
