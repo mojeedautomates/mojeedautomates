@@ -24,6 +24,16 @@ import order2 from "../assets/projects/Order_2.png.asset.json";
 import order3 from "../assets/projects/Order_3.png.asset.json";
 import order4 from "../assets/projects/Order_4.png.asset.json";
 import order5 from "../assets/projects/Order_5.png.asset.json";
+import lead from "../assets/projects/Lead.png.asset.json";
+import lead1 from "../assets/projects/Lead_1.png.asset.json";
+import lead2 from "../assets/projects/Lead_2.png.asset.json";
+import bmlGrant from "../assets/projects/BML_Grant.png.asset.json";
+import bmlGrant1 from "../assets/projects/BML_Grant_1.png.asset.json";
+import bmlGrant2 from "../assets/projects/BML_Grant_2.png.asset.json";
+import bmlGrant3 from "../assets/projects/BML_Grant_3.png.asset.json";
+import bmlGrant4 from "../assets/projects/BML_Grant_4.png.asset.json";
+import bmlGrant5 from "../assets/projects/BML_Grant_5.png.asset.json";
+import bmlGrant9 from "../assets/projects/BML_Grant_9.png.asset.json";
 
 export type Project = {
   id: string;
@@ -91,6 +101,11 @@ export const projects: Project[] = [
       "No lead goes cold from missed timing, and no lead gets a follow-up after they have already replied. About 15 hours a week are returned to the team — previously spent manually auditing sites, writing individual emails, and tracking who needed a follow-up.",
     cover: leadgenCover,
     coverColor: "#9333EA",
+    screenshots: [
+      { url: lead.url, caption: "n8n workflow — Lead Gen + Outreach" },
+      { url: lead1.url, caption: "Follow-up scheduler workflow" },
+      { url: lead2.url, caption: "Automation Lead sheet" },
+    ],
   },
   {
     id: "instant-lead-capture",
@@ -196,5 +211,14 @@ export const projects: Project[] = [
       "Grants that match the hospital's criteria get identified and flagged consistently, instead of relying on manual research that can miss high-value opportunities. Application drafts are ready in minutes instead of weeks, freeing healthcare staff to stay focused on clinical work.",
     cover: grantCover,
     coverColor: "#A855F7",
+    screenshots: [
+      { url: bmlGrant.url, caption: "n8n workflow — Grant Scout + Match" },
+      { url: bmlGrant5.url, caption: "The Drafter workflow" },
+      { url: bmlGrant9.url, caption: "Scheduler + Reminder workflow" },
+      { url: bmlGrant3.url, caption: "Grant Details sheet" },
+      { url: bmlGrant1.url, caption: "Hospital profile sheet" },
+      { url: bmlGrant4.url, caption: "Grant–Hospital match tracker" },
+      { url: bmlGrant2.url, caption: "AI-drafted proposal notification" },
+    ],
   },
 ];
