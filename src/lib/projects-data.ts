@@ -206,7 +206,7 @@ export const projects: Project[] = [
       "The AI agent evaluates compatibility and outputs a qualification score against a set compliance threshold.",
     ],
     result:
-      "The automation filters out low-scoring opportunities and maps high-value, highly compatible grants directly into a central tracking database. By replacing manual vetting with automated AI scoring, the system eliminates hours of manual research and ensures the hospital instantly prioritizes top-tier funding matches.",
+      "The automation filters out low scoring opportunities and maps high value, highly compatible grants directly into a central tracking database. By replacing manual vetting with automated AI scoring, the system eliminates hours of manual research and ensures the hospital instantly prioritizes top tier funding matches.",
     impact:
       "Grants that match the hospital's criteria get identified and flagged consistently, instead of relying on manual research that can miss high-value opportunities. Application drafts are ready in minutes instead of weeks, freeing healthcare staff to stay focused on clinical work.",
     cover: grantCover,
