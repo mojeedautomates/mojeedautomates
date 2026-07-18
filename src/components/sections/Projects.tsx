@@ -85,7 +85,7 @@ export function ProjectsSection({ preview = false }: Props) {
           <div className="mt-12 flex justify-center">
             <Link
               to="/projects"
-              className="group inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold hover:border-primary/40 hover:bg-primary hover:text-primary-foreground transition-all"
+              className="group inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.06] backdrop-blur px-6 py-3 text-sm font-semibold text-white hover:bg-white/[0.12] hover:border-white/30 transition-colors"
             >
               See more projects
               <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
