@@ -7,7 +7,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-14 grid gap-10 md:grid-cols-3">
         <div>
           <div className="font-semibold text-lg">
-            Mojeed <span className="text-[#7B5EA7]">Automates</span>.
+            Mojeed <span className="text-[#7B5EA7]">Automates.</span>
           </div>
           <p className="text-sm text-muted-foreground mt-3 max-w-xs">
             AI-powered automation that cuts manual work, reduces costs and grows revenue.
