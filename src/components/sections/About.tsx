@@ -4,15 +4,15 @@ import profileAsset from "../../assets/portrait.png.asset.json";
 import resumeAsset from "../../assets/docs/Rem_Resume.pdf.asset.json";
 
 const highlights = [
-  "Built Reliable, Production-Grade Automation Workflows",
-  "End-to-End Systems That Work Around the Clock",
+  "Built Reliable, Production Grade Automation Workflows",
+  "End to End Systems That Work Around the Clock",
   "Smart Automation that helps Businesses Save Time & Reduce Manual Work",
 ];
 
 const values = [
   {
     title: "Mapped Before It's Built",
-    body: "Before building a single workflow, every process gets mapped from start to finish, so what's delivered holds up in production and scales as you grow — not just looks good in a demo.",
+    body: "Before building a single workflow, every process gets mapped from start to finish, so what's delivered holds up in production and scales as you grow, not just looks good in a demo.",
   },
   {
     title: "Transparent by Design",
@@ -68,8 +68,8 @@ export function About() {
               <p className="text-lg leading-relaxed text-foreground/90">
                 I'm an AI Automation Specialist helping businesses replace manual,
                 repetitive work with intelligent systems that run on their own. My work
-                spans lead capture and auto follow-up workflows, AI agents for automated
-                customer interaction, and end-to-end automations across RAG pipelines,
+                spans lead capture and auto follow up workflows, AI agents for automated
+                customer interaction, and end to end automations across RAG pipelines,
                 agentic systems, and voice agents.
               </p>
             </Reveal>
