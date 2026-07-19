@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight, Target, Cog, Sparkles, TrendingUp, Maximize2, Sh
 import { projects } from "../lib/projects-data";
 import { Reveal } from "../components/Reveal";
 import { Lightbox } from "../components/Lightbox";
-import { SITE_URL } from "../lib/site";
+import { SITE_URL, OG_IMAGE } from "../lib/site";
 
 export const Route = createFileRoute("/projects/$id")({
   loader: ({ params }) => {
@@ -31,9 +31,11 @@ export const Route = createFileRoute("/projects/$id")({
         { property: "og:description", content: loaderData.project.description },
         { property: "og:url", content: url },
         { property: "og:type", content: "article" },
+        { property: "og:image", content: OG_IMAGE },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: loaderData.project.title },
         { name: "twitter:description", content: loaderData.project.description },
+        { name: "twitter:image", content: OG_IMAGE },
       ],
       links: [{ rel: "canonical", href: url }],
       scripts: [
