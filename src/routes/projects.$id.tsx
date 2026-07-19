@@ -26,10 +26,14 @@ export const Route = createFileRoute("/projects/$id")({
       meta: [
         { title: `${loaderData.project.title} — Mojeed Automates` },
         { name: "description", content: loaderData.project.description },
+        { name: "robots", content: "index, follow" },
         { property: "og:title", content: loaderData.project.title },
         { property: "og:description", content: loaderData.project.description },
         { property: "og:url", content: url },
         { property: "og:type", content: "article" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: loaderData.project.title },
+        { name: "twitter:description", content: loaderData.project.description },
       ],
       links: [{ rel: "canonical", href: url }],
       scripts: [
