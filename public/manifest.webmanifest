@@ -1,0 +1,13 @@
+{
+  "name": "Mojeed Automates",
+  "short_name": "Mojeed",
+  "description": "AI agents, RAG systems, and end-to-end automations that replace manual work with systems that run on their own.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F172A",
+  "theme_color": "#7B5EA7",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
