@@ -93,11 +93,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Mojeed builds AI agents, custom RAG systems, and end-to-end automations for businesses drowning in manual work.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Mojeed Automates" },
+      { name: "robots", content: "index, follow" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Mojeed Automates — AI Systems Architect & Automation Specialist" },
       { name: "twitter:description", content: "Mojeed builds AI agents, custom RAG systems, and end-to-end automations for businesses drowning in manual work." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b473b034-2304-48ac-9f82-2b13de99fd55/id-preview-729880fc--c4cf44b9-8f38-48c0-885a-97292677f62a.lovable.app-1784124435166.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b473b034-2304-48ac-9f82-2b13de99fd55/id-preview-729880fc--c4cf44b9-8f38-48c0-885a-97292677f62a.lovable.app-1784124435166.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
