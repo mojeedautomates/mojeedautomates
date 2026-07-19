@@ -4,8 +4,7 @@ import { ArrowLeft, ArrowRight, Target, Cog, Sparkles, TrendingUp, Maximize2, Sh
 import { projects } from "../lib/projects-data";
 import { Reveal } from "../components/Reveal";
 import { Lightbox } from "../components/Lightbox";
-
-const SITE_URL = "https://mojeed-automates-space.lovable.app";
+import { SITE_URL } from "../lib/site";
 
 export const Route = createFileRoute("/projects/$id")({
   loader: ({ params }) => {
