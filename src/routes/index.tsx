@@ -5,7 +5,7 @@ import { WhatIBuild } from "../components/sections/WhatIBuild";
 import { ProjectsSection } from "../components/sections/Projects";
 import { Skills } from "../components/sections/Skills";
 import { Contact } from "../components/sections/Contact";
-import { SITE_URL } from "../lib/site";
+import { SITE_URL, OG_IMAGE } from "../lib/site";
 
 const TITLE = "Mojeed Automates — AI Systems Architect & Automation Specialist";
 const DESCRIPTION =
@@ -21,8 +21,12 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:url", content: SITE_URL + "/" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [{ rel: "canonical", href: SITE_URL + "/" }],
     scripts: [
