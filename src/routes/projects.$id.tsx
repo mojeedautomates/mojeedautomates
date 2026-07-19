@@ -4,8 +4,7 @@ import { ArrowLeft, ArrowRight, Target, Cog, Sparkles, TrendingUp, Maximize2, Sh
 import { projects } from "../lib/projects-data";
 import { Reveal } from "../components/Reveal";
 import { Lightbox } from "../components/Lightbox";
-
-const SITE_URL = "https://mojeed-automates-space.lovable.app";
+import { SITE_URL } from "../lib/site";
 
 export const Route = createFileRoute("/projects/$id")({
   loader: ({ params }) => {
@@ -27,10 +26,14 @@ export const Route = createFileRoute("/projects/$id")({
       meta: [
         { title: `${loaderData.project.title} — Mojeed Automates` },
         { name: "description", content: loaderData.project.description },
+        { name: "robots", content: "index, follow" },
         { property: "og:title", content: loaderData.project.title },
         { property: "og:description", content: loaderData.project.description },
         { property: "og:url", content: url },
         { property: "og:type", content: "article" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: loaderData.project.title },
+        { name: "twitter:description", content: loaderData.project.description },
       ],
       links: [{ rel: "canonical", href: url }],
       scripts: [

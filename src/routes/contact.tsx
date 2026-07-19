@@ -1,14 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Contact } from "../components/sections/Contact";
+import { SITE_URL } from "../lib/site";
+
+const TITLE = "Contact — Mojeed Automates";
+const DESCRIPTION = "Get in touch to automate the workflows eating your week.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Mojeed Automates" },
-      { name: "description", content: "Get in touch to automate the workflows eating your week." },
-      { property: "og:title", content: "Contact — Mojeed Automates" },
-      { property: "og:description", content: "Reach out about AI automation projects." },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { name: "robots", content: "index, follow" },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:url", content: SITE_URL + "/contact" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
     ],
+    links: [{ rel: "canonical", href: SITE_URL + "/contact" }],
   }),
   component: () => (
     <div className="pt-16">
