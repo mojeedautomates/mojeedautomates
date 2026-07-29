@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { ResponsiveImage } from "./ResponsiveImage";
 
 type Props = {
   images: { url: string; caption?: string }[];
@@ -95,9 +96,10 @@ export function Lightbox({ images, index, onClose, onNav }: Props) {
         </>
       )}
       <figure className="max-w-6xl w-full max-h-full flex flex-col items-center gap-3" onClick={(e) => e.stopPropagation()}>
-        <img
+        <ResponsiveImage
           src={img.url}
           alt={img.caption ?? "Screenshot"}
+          sizes="(max-width: 768px) 100vw, 1200px"
           className="max-h-[85vh] w-auto max-w-full object-contain rounded-lg shadow-2xl"
         />
         {img.caption && (

@@ -1,5 +1,6 @@
 import { Check, FileText } from "lucide-react";
 import { Reveal } from "../Reveal";
+import { ResponsiveImage } from "../ResponsiveImage";
 import profileAsset from "../../assets/portrait.png.asset.json";
 import resumeAsset from "../../assets/docs/Rem_Resume.pdf.asset.json";
 
@@ -35,11 +36,11 @@ export function About() {
         <Reveal>
           <div className="lg:sticky lg:top-24">
             <div className="aspect-square rounded-3xl overflow-hidden border border-border shadow-elegant bg-[#0E0B14] grid place-items-center">
-              <img
+              <ResponsiveImage
                 src={profileAsset.url}
                 alt="Mojeed Salisu"
+                sizes="340px"
                 className="w-full h-full object-contain"
-                loading="lazy"
               />
             </div>
             <a
