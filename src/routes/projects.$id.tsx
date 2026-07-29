@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ArrowLeft, ArrowRight, Target, Cog, Sparkles, TrendingUp, Maximize2, Share2, Check as CheckIcon } from "lucide-react";
 import { projects } from "../lib/projects-data";
 import { Reveal } from "../components/Reveal";
+import { ResponsiveImage } from "../components/ResponsiveImage";
 import { Lightbox } from "../components/Lightbox";
 import { SITE_URL, OG_IMAGE } from "../lib/site";
 

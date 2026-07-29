@@ -1,5 +1,6 @@
 import { Check, FileText } from "lucide-react";
 import { Reveal } from "../Reveal";
+import { ResponsiveImage } from "../ResponsiveImage";
 import profileAsset from "../../assets/portrait.png.asset.json";
 import resumeAsset from "../../assets/docs/Rem_Resume.pdf.asset.json";
 

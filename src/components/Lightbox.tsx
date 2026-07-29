@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { ResponsiveImage } from "./ResponsiveImage";
 
 type Props = {
   images: { url: string; caption?: string }[];
