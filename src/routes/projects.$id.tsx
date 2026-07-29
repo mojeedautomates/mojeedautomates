@@ -237,7 +237,7 @@ function ProjectDetail() {
                     className="group relative block w-full bg-white overflow-hidden"
                     aria-label={`Open ${s.caption ?? "screenshot"} full size`}
                   >
-                    <img src={s.url} alt={s.caption ?? project.title} className="w-full h-auto transition-transform group-hover:scale-[1.02]" />
+                    <ResponsiveImage src={s.url} alt={s.caption ?? project.title} sizes="(max-width: 640px) 100vw, 50vw" className="w-full h-auto transition-transform group-hover:scale-[1.02]" />
                     <span className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
                       <span className="opacity-0 group-hover:opacity-100 transition-opacity w-11 h-11 rounded-full bg-white/90 text-black grid place-items-center">
                         <Maximize2 size={18} />

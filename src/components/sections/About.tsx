@@ -35,11 +35,11 @@ export function About() {
         <Reveal>
           <div className="lg:sticky lg:top-24">
             <div className="aspect-square rounded-3xl overflow-hidden border border-border shadow-elegant bg-[#0E0B14] grid place-items-center">
-              <img
+              <ResponsiveImage
                 src={profileAsset.url}
                 alt="Mojeed Salisu"
+                sizes="340px"
                 className="w-full h-full object-contain"
-                loading="lazy"
               />
             </div>
             <a
