@@ -1,7 +1,7 @@
 import { Check, FileText } from "lucide-react";
 import { Reveal } from "../Reveal";
 import { ResponsiveImage } from "../ResponsiveImage";
-import profileAsset from "../../assets/portrait.png.asset.json";
+const profileAsset = "/assets/portrait.png?v=1";
 import resumeAsset from "../../assets/docs/Rem_Resume.pdf.asset.json";
 
 const highlights = [
@@ -37,10 +37,10 @@ export function About() {
           <div className="lg:sticky lg:top-24">
             <div className="aspect-square rounded-3xl overflow-hidden border border-border shadow-elegant bg-[#0E0B14] grid place-items-center">
               <ResponsiveImage
-                src={profileAsset.url}
+                src={profileAsset}
                 alt="Mojeed Salisu"
                 sizes="340px"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
               />
             </div>
             <a
