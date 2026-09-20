@@ -2,7 +2,7 @@ import { Check, FileText } from "lucide-react";
 import { Reveal } from "../Reveal";
 import { ResponsiveImage } from "../ResponsiveImage";
 const profileAsset = "/assets/portrait.png?v=1";
-import resumeAsset from "../../assets/docs/Rem_Resume.pdf.asset.json";
+const resumeAsset = "/assets/Resume.pdf";
 
 const highlights = [
   "Built Reliable, Production Grade Automation Workflows",
@@ -44,7 +44,7 @@ export function About() {
               />
             </div>
             <a
-              href={resumeAsset.url}
+              href={resumeAsset}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-5 inline-flex items-center justify-center gap-2 w-full rounded-full border border-border bg-card px-5 py-2.5 text-sm font-semibold hover:border-primary/40 hover:bg-primary hover:text-primary-foreground transition-colors"
