@@ -2,7 +2,7 @@ import { Check, FileText } from "lucide-react";
 import { Reveal } from "../Reveal";
 import { ResponsiveImage } from "../ResponsiveImage";
 const profileAsset = "/assets/portrait.png?v=1";
-const resumeAsset = "/assets/Resume.pdf";
+const resumeAsset = "/docs/Resume.pdf";
 
 const highlights = [
   "Built Reliable, Production Grade Automation Workflows",
