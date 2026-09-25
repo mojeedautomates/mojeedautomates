@@ -4,6 +4,7 @@ import instantCover from "../assets/workflows/instant_response_branching_workflo
 import onboardingCover from "../assets/workflows/client_onboarding_workflow.svg";
 import invoiceCover from "../assets/workflows/invoice_collection_workflow.svg";
 import grantCover from "../assets/workflows/grant_qualification_workflow.svg";
+import menuCostCover from "../assets/workflows/menu_cost_planner_workflow.svg";
 
 import bmlInvoice from "../assets/projects/bml_invoice.png.asset.json";
 import bmlInvoice1 from "../assets/projects/bml_invoice_1.png.asset.json";
@@ -105,6 +106,38 @@ export const projects: Project[] = [
       { url: lead.url, caption: "n8n workflow — Lead Gen + Outreach" },
       { url: lead1.url, caption: "Follow-up scheduler workflow" },
       { url: lead2.url, caption: "Automation Lead sheet" },
+    ],
+  },
+  {
+    id: "restaurant-menu-cost-planner",
+    title: "Restaurant Menu & Cost Planner",
+    description:
+      "A custom built Airtable base built for a Nigerian restaurant to manage recipes, track changing market prices, and automatically calculate daily meal prep costs.",
+    tags: ["Airtable"],
+    problem:
+      "The restaurant had a hard time figuring out the exact cost of their dishes because local market prices for ingredients kept changing. Doing the math manually in normal spreadsheets led to budgeting mistakes, and figuring out what to buy for the daily market run took up way too much time.",
+    process: [
+      "I set up a main ingredient list to track the current market price for every single item.",
+      "I built detailed recipes and linked them directly to those specific ingredients.",
+      "I added a daily planner to schedule exactly what the kitchen needs to cook each day.",
+      "When the price of an ingredient changes in the main list, the system automatically does the math and updates the total cost of any dish that uses it.",
+      "A custom calculator instantly adds up the total grocery expenses for the planned menu.",
+    ],
+    result:
+      "Now whenever the restaurant plans their menu, the system instantly gives them an accurate cost breakdown. The kitchen staff can clearly see the daily cooking schedule on a visual calendar, and the manager knows exactly how much the market run will cost without having to do any manual math.",
+    impact:
+      "Budgeting is now completely accurate and happens on autopilot. The restaurant stops losing money on bad cost estimates, and the management team saves hours they used to spend crunching numbers so they can actually focus on running the business.",
+    cover: menuCostCover,
+    coverColor: "#7B5EA7",
+    screenshots: [
+      { url: "/assets/projects/restaurant_ingredients.jpg", caption: "Current ingredient prices and suppliers" },
+      { url: "/assets/projects/restaurant_recipes.jpg", caption: "Recipes linked to ingredients and costs" },
+      { url: "/assets/projects/restaurant_meal_planner.jpg", caption: "Daily meal planning schedule" },
+      { url: "/assets/projects/restaurant_ingredient_gallery.jpg", caption: "Visual ingredient gallery" },
+      { url: "/assets/projects/restaurant_difficulty.jpg", caption: "Recipes grouped by difficulty" },
+      { url: "/assets/projects/restaurant_market_calculator.jpg", caption: "Market run cost calculator" },
+      { url: "/assets/projects/restaurant_categories.jpg", caption: "Ingredients grouped by category" },
+      { url: "/assets/projects/restaurant_recipe_instructions.jpg", caption: "Recipes with cooking instructions" },
     ],
   },
   {

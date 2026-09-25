@@ -9,7 +9,9 @@ type Props = {
 };
 
 export function ProjectsSection({ preview = false }: Props) {
-  const list = preview ? projects.slice(0, 4) : projects;
+  const list = preview
+    ? projects.filter((project) => project.id !== "instant-lead-capture").slice(0, 4)
+    : projects;
 
   return (
     <section id="projects" className="mx-auto max-w-6xl px-6 py-24">
