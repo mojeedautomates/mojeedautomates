@@ -45,6 +45,11 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://mojeedautomates.lovable.app/projects/restaurant-menu-cost-planner</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://mojeedautomates.lovable.app/projects/instant-lead-capture</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
