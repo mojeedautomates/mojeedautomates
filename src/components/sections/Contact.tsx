@@ -184,7 +184,7 @@ export function Contact({ formOnly = false }: Props) {
             </p>
 
             <a
-              href="mailto:mojeedautomates@gmail.com"
+              href="mailto:mojeed@mojeedautomates.com"
               className="mt-8 inline-flex items-center gap-4 rounded-2xl border border-border bg-card p-5 hover:border-primary/40 transition-colors group max-w-md w-full text-left"
             >
               <div className="w-11 h-11 rounded-xl bg-primary/15 text-primary grid place-items-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
@@ -194,7 +194,7 @@ export function Contact({ formOnly = false }: Props) {
                 <div className="text-xs text-muted-foreground uppercase tracking-widest">
                   Email
                 </div>
-                <div className="font-semibold">mojeedautomates@gmail.com</div>
+                <div className="font-semibold">mojeed@mojeedautomates.com</div>
               </div>
             </a>
           </div>

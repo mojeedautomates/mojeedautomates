@@ -27,7 +27,7 @@ export function Footer() {
           <div className="text-sm font-semibold mb-3">Get In Touch</div>
           <div className="flex items-center gap-3">
             <a
-              href="mailto:mojeedautomates@gmail.com"
+              href="mailto:mojeed@mojeedautomates.com"
               aria-label="Email"
               className="w-10 h-10 rounded-full border border-border grid place-items-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
             >
@@ -53,10 +53,10 @@ export function Footer() {
             </a>
           </div>
           <a
-            href="mailto:mojeedautomates@gmail.com"
+            href="mailto:mojeed@mojeedautomates.com"
             className="block mt-4 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            mojeedautomates@gmail.com
+            mojeed@mojeedautomates.com
           </a>
         </div>
       </div>
