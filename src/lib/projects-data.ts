@@ -5,6 +5,8 @@ import onboardingCover from "../assets/workflows/client_onboarding_workflow.svg"
 import invoiceCover from "../assets/workflows/invoice_collection_workflow.svg";
 import grantCover from "../assets/workflows/grant_qualification_workflow.svg";
 import menuCostCover from "../assets/workflows/menu_cost_planner_workflow.svg";
+import supportAgentCover from "../assets/workflows/multi_channel_support_workflow.svg";
+import supportAgentVideo from "../assets/projects/multi_channel_support_walkthrough.mp4.asset.json";
 
 import bmlInvoice from "../assets/projects/bml_invoice.png.asset.json";
 import bmlInvoice1 from "../assets/projects/bml_invoice_1.png.asset.json";
@@ -47,10 +49,48 @@ export type Project = {
   impact: string;
   cover: string;
   coverColor: string;
+  video?: string;
   screenshots?: { url: string; caption?: string }[];
 };
 
 export const projects: Project[] = [
+  {
+    id: "multi-channel-support-agent",
+    title: "Multi Channel AI Customer Support Agent",
+    description:
+      "An AI powered customer support system that handles enquiries across WhatsApp, website chat, and email through one centralized workflow. It uses a knowledge base and persistent conversation memory to provide context aware responses, keeps customer interactions organized in a CRM, and transfers complex or unresolved cases to human agents when necessary.",
+    tags: ["n8n", "OpenAI", "Supabase", "PostgreSQL", "Vector Store", "Airtable", "WhatsApp", "Website Chat", "Gmail", "Webhooks", "n8n Forms", "Google Apps Script"],
+    problem:
+      "Businesses receive customer enquiries through different channels, making it difficult to maintain consistent support and keep track of conversations. Customers may have to repeat information when switching channels, while support teams spend time answering recurring questions and manually managing conversation records. Basic AI chatbots also have limitations. They can lose track of previous interactions, provide unreliable answers when they lack the right information, or continue responding after a case has been handed over to a human agent. Without proper escalation tracking, unresolved cases can easily be overlooked.",
+    process: [
+      "Multi channel message handling: Customers can contact the business through WhatsApp, website chat, or email. Each incoming message is normalized and routed into a centralized n8n workflow, allowing all channels to use the same AI support process.",
+      "Customer identification and CRM management: Airtable manages customer records and conversation tracking. Each customer receives a unique Customer ID, and conversation records are linked to that ID so the support team can identify customers and follow their interaction history.",
+      "Knowledge based responses: The AI Agent uses a Supabase vector knowledge base to retrieve relevant business information before responding. This allows it to answer product, service, policy, and other business related questions using the information available to it rather than relying entirely on its general knowledge.",
+      "Persistent cross channel memory: Supabase PostgreSQL Chat Memory stores conversation context, using the customer’s Airtable Customer ID as the session key. This allows the AI Agent to retrieve the same customer’s conversation history regardless of whether they return through WhatsApp, website chat, or email. Each customer has a separate memory session, preventing conversations from different customers from being mixed.",
+      "Channel specific responses: After processing a message, the system identifies the channel it came from and sends the response back through that same channel, with the appropriate response format.",
+      "Human escalation and handoff: When a customer raises a complex complaint, requests human assistance, or presents an issue that requires staff attention, the AI Agent triggers an escalation instead of continuing with the normal automated response. A summary of the conversation is generated, the escalation status is updated in Airtable, and a human representative is notified by email.",
+      "Duplicate response prevention: Once a case is handed over, the automated response path is blocked while the human agent handles it. This prevents the AI Agent from sending competing or conflicting replies. Human agent interactions are also captured in the conversation history, keeping the record updated for when automated support resumes.",
+      "Escalation tracking and follow ups: A dedicated status update form allows human agents to update the progress of escalated cases without needing direct access to Airtable. The system also sends follow up notifications when an escalation remains unattended, reducing the chances of unresolved cases being forgotten.",
+      "Error monitoring: A separate error handling workflow captures workflow failures and sends notifications, making it easier to identify issues that could interrupt customer support.",
+    ],
+    result:
+      "The business gets one customer support system serving three communication channels, with a shared customer record and conversation history behind them. Customers receive relevant responses based on the business knowledge base and their previous interactions, while cases that require human attention are transferred with their context intact. The support team can track conversations, manage escalations, update case statuses, and stay informed about unattended cases without having to monitor every channel separately.",
+    impact:
+      "The system reduces the amount of repetitive work handled manually by support staff and gives the business a more organized way to manage customer enquiries across multiple channels. Shared customer memory reduces the need for customers to repeat information, while structured escalation and human handoff ensure that automation does not get in the way when personal attention is needed. It also gives the business a foundation for handling a higher volume of enquiries without requiring staff to manage each conversation from beginning to end.",
+    cover: supportAgentCover,
+    coverColor: "#8B5CF6",
+    video: supportAgentVideo.url,
+    screenshots: [
+      { url: "/assets/projects/support_agent_1.png", caption: "n8n workflow — Multi Channel AI Support Agent" },
+      { url: "/assets/projects/support_agent_2.png", caption: "Full workflow canvas with the supporting sub workflows" },
+      { url: "/assets/projects/support_agent_3.png", caption: "Internal Escalation Reminder workflow" },
+      { url: "/assets/projects/support_agent_4.png", caption: "Knowledge Base Ingestion workflow" },
+      { url: "/assets/projects/support_agent_5.png", caption: "Escalation Status Update workflow" },
+      { url: "/assets/projects/support_agent_6.png", caption: "Central Error Monitoring & Notifications workflow" },
+      { url: "/assets/projects/support_agent_7.png", caption: "Website chat widget answering a customer enquiry" },
+      { url: "/assets/projects/support_agent_8.png", caption: "Human escalation email with full customer context" },
+    ],
+  },
   {
     id: "whatsapp-ordering-agent",
     title: "WhatsApp Ordering AI Agent",

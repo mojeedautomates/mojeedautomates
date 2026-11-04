@@ -219,6 +219,32 @@ function ProjectDetail() {
         </Reveal>
       </section>
 
+      {/* Walkthrough video */}
+      {project.video && (
+        <section className="mx-auto max-w-5xl px-6 pb-16">
+          <Reveal>
+            <div className="text-xs font-semibold uppercase tracking-widest text-[#7B5EA7]">
+              Watch it work
+            </div>
+            <h2 className="mt-2 text-2xl sm:text-3xl font-bold">Project Walkthrough</h2>
+          </Reveal>
+          <Reveal>
+            <div className="mt-8 rounded-2xl overflow-hidden border border-border bg-card shadow-elegant">
+              <video
+                src={project.video}
+                controls
+                preload="metadata"
+                playsInline
+                className="w-full h-auto bg-black"
+              />
+              <div className="px-5 py-3 text-xs text-muted-foreground border-t border-border">
+                A walkthrough of the full workflow, from incoming messages to responses and escalations.
+              </div>
+            </div>
+          </Reveal>
+        </section>
+      )}
+
       {/* Screenshots */}
       {project.screenshots && project.screenshots.length > 0 && (
         <section className="mx-auto max-w-5xl px-6 pb-16">
