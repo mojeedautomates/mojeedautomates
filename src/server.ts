@@ -35,6 +35,11 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://mojeedautomates.lovable.app/projects/multi-channel-support-agent</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://mojeedautomates.lovable.app/projects/whatsapp-ordering-agent</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
