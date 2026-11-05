@@ -53,7 +53,7 @@ export type Project = {
   screenshots?: { url: string; caption?: string }[];
 };
 
-export const projects: Project[] = [
+const projectCatalog: Project[] = [
   {
     id: "multi-channel-support-agent",
     title: "Multi Channel AI Customer Support Agent",
@@ -89,6 +89,10 @@ export const projects: Project[] = [
       { url: "/assets/projects/support_agent_6.png", caption: "Central Error Monitoring & Notifications workflow" },
       { url: "/assets/projects/support_agent_7.png", caption: "Website chat widget answering a customer enquiry" },
       { url: "/assets/projects/support_agent_8.png", caption: "Human escalation email with full customer context" },
+      { url: "/assets/projects/support_agent_9.png", caption: "Gab 9: Customer records across channels" },
+      { url: "/assets/projects/support_agent_10.png", caption: "Gab 10: Customer conversations and responses" },
+      { url: "/assets/projects/support_agent_11.png", caption: "Gab 11: Customer support knowledge base documents" },
+      { url: "/assets/projects/support_agent_12.png", caption: "Gab 12: Persistent customer chat history" },
     ],
   },
   {
@@ -295,3 +299,22 @@ export const projects: Project[] = [
     ],
   },
 ];
+
+const requestedProjectOrder = [
+  "multi-channel-support-agent",
+  "client-onboarding",
+  "lead-generation-engine",
+  "restaurant-menu-cost-planner",
+  "whatsapp-ordering-agent",
+];
+const requestedProjectPositions = new Map(
+  requestedProjectOrder.map((projectId, index) => [projectId, index]),
+);
+
+export const projects: Project[] = [...projectCatalog].sort((a, b) => {
+  const aPosition = requestedProjectPositions.get(a.id);
+  const bPosition = requestedProjectPositions.get(b.id);
+  if (aPosition === undefined) return bPosition === undefined ? 0 : 1;
+  if (bPosition === undefined) return -1;
+  return aPosition - bPosition;
+});
