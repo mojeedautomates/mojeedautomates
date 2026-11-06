@@ -1,6 +1,8 @@
 # Task roadmap
 
-- [ ] Add Gab 9–12 as the final screenshots for the Multi Channel support project.
-- [ ] Reorder the Projects page and align the Home featured selection for mobile and desktop.
-- [ ] Update TanStack packages, confirm the required server-core version, and verify the app builds.
-- [ ] Verify the preview and review the connected-repository sync status.
+- [ ] Audit public page copy, remove awkward AI jargon and dash or underscore punctuation, and make the wording natural.
+- [ ] Update the requested WhatsApp and support project screenshot captions, and remove the obsolete full workflow canvas image.
+- [ ] Replace the five support project screenshots with Gab 7 through Gab 11 and refresh the local responsive image files.
+- [ ] Serve the original walkthrough MP4 from `public/videos` and point the project player to that repository file.
+- [ ] Confirm project ordering and home featured selections remain correct on desktop and mobile.
+- [ ] Verify the required TanStack server core version, run the app verification checks, and confirm repository sync status.
