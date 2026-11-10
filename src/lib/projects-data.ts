@@ -6,7 +6,6 @@ import invoiceCover from "../assets/workflows/invoice_collection_workflow.svg";
 import grantCover from "../assets/workflows/grant_qualification_workflow.svg";
 import menuCostCover from "../assets/workflows/menu_cost_planner_workflow.svg";
 import supportAgentCover from "../assets/workflows/multi_channel_support_workflow.svg";
-import supportAgentVideo from "../assets/projects/multi_channel_support_walkthrough.mp4.asset.json";
 
 import bmlInvoice from "../assets/projects/bml_invoice.png.asset.json";
 import bmlInvoice1 from "../assets/projects/bml_invoice_1.png.asset.json";
@@ -58,66 +57,65 @@ const projectCatalog: Project[] = [
     id: "multi-channel-support-agent",
     title: "Multi Channel AI Customer Support Agent",
     description:
-      "An AI powered customer support system that handles enquiries across WhatsApp, website chat, and email through one centralized workflow. It uses a knowledge base and persistent conversation memory to provide context aware responses, keeps customer interactions organized in a CRM, and transfers complex or unresolved cases to human agents when necessary.",
+      "A customer support system that handles enquiries across WhatsApp, website chat, and email through one shared workflow. It uses the business knowledge base and conversation history to provide useful responses, keeps customer records organized, and passes complex or unresolved cases to a person when needed.",
     tags: ["n8n", "OpenAI", "Supabase", "PostgreSQL", "Vector Store", "Airtable", "WhatsApp", "Website Chat", "Gmail", "Webhooks", "n8n Forms", "Google Apps Script"],
     problem:
-      "Businesses receive customer enquiries through different channels, making it difficult to maintain consistent support and keep track of conversations. Customers may have to repeat information when switching channels, while support teams spend time answering recurring questions and manually managing conversation records. Basic AI chatbots also have limitations. They can lose track of previous interactions, provide unreliable answers when they lack the right information, or continue responding after a case has been handed over to a human agent. Without proper escalation tracking, unresolved cases can easily be overlooked.",
+      "Businesses receive enquiries across several channels, which makes it harder to deliver consistent support and keep conversation records up to date. Customers may need to repeat information when they switch channels, while staff spend time answering recurring questions. Chatbots can also lose conversation history, answer without enough business information, or continue replying after a person takes over. Without clear handoff tracking, unresolved cases can be missed.",
     process: [
-      "Multi channel message handling: Customers can contact the business through WhatsApp, website chat, or email. Each incoming message is normalized and routed into a centralized n8n workflow, allowing all channels to use the same AI support process.",
-      "Customer identification and CRM management: Airtable manages customer records and conversation tracking. Each customer receives a unique Customer ID, and conversation records are linked to that ID so the support team can identify customers and follow their interaction history.",
-      "Knowledge based responses: The AI Agent uses a Supabase vector knowledge base to retrieve relevant business information before responding. This allows it to answer product, service, policy, and other business related questions using the information available to it rather than relying entirely on its general knowledge.",
-      "Persistent cross channel memory: Supabase PostgreSQL Chat Memory stores conversation context, using the customer’s Airtable Customer ID as the session key. This allows the AI Agent to retrieve the same customer’s conversation history regardless of whether they return through WhatsApp, website chat, or email. Each customer has a separate memory session, preventing conversations from different customers from being mixed.",
-      "Channel specific responses: After processing a message, the system identifies the channel it came from and sends the response back through that same channel, with the appropriate response format.",
-      "Human escalation and handoff: When a customer raises a complex complaint, requests human assistance, or presents an issue that requires staff attention, the AI Agent triggers an escalation instead of continuing with the normal automated response. A summary of the conversation is generated, the escalation status is updated in Airtable, and a human representative is notified by email.",
-      "Duplicate response prevention: Once a case is handed over, the automated response path is blocked while the human agent handles it. This prevents the AI Agent from sending competing or conflicting replies. Human agent interactions are also captured in the conversation history, keeping the record updated for when automated support resumes.",
-      "Escalation tracking and follow ups: A dedicated status update form allows human agents to update the progress of escalated cases without needing direct access to Airtable. The system also sends follow up notifications when an escalation remains unattended, reducing the chances of unresolved cases being forgotten.",
-      "Error monitoring: A separate error handling workflow captures workflow failures and sends notifications, making it easier to identify issues that could interrupt customer support.",
+      "Messages from WhatsApp, website chat, and email are routed through one n8n workflow so each channel follows the same support process.",
+      "Airtable stores customer details and conversation records. Each customer has a unique Customer ID, which links their messages and helps the team follow previous interactions.",
+      "The support agent checks the business knowledge base for relevant product, service, and policy information before responding.",
+      "PostgreSQL stores conversation history under each customer’s Airtable Customer ID, allowing the support agent to recognize returning customers across all three channels without mixing their records.",
+      "Replies are sent back through the same channel as the customer’s message, in the appropriate format.",
+      "When a case needs staff attention, the system prepares a conversation summary, updates its status in Airtable, and emails a representative instead of sending another automated reply.",
+      "Automated replies stop while a person handles an escalated case. Staff responses are added to the conversation history so automated support can resume with the latest context.",
+      "Staff can update case progress through a dedicated form without opening Airtable. The system also sends a reminder when an escalation remains unattended.",
+      "A separate workflow reports system errors so the team can respond to problems that interrupt customer support.",
     ],
     result:
-      "The business gets one customer support system serving three communication channels, with a shared customer record and conversation history behind them. Customers receive relevant responses based on the business knowledge base and their previous interactions, while cases that require human attention are transferred with their context intact. The support team can track conversations, manage escalations, update case statuses, and stay informed about unattended cases without having to monitor every channel separately.",
+      "The business gets one support system for three communication channels, backed by shared customer records and conversation history. Replies draw on the business knowledge base and previous interactions, while staff receive complex cases with their context intact. The team can track conversations, update case statuses, and follow unattended cases in one place.",
     impact:
-      "The system reduces the amount of repetitive work handled manually by support staff and gives the business a more organized way to manage customer enquiries across multiple channels. Shared customer memory reduces the need for customers to repeat information, while structured escalation and human handoff ensure that automation does not get in the way when personal attention is needed. It also gives the business a foundation for handling a higher volume of enquiries without requiring staff to manage each conversation from beginning to end.",
+      "The system reduces repetitive support work and gives the business a clearer view of customer enquiries. Shared conversation history helps customers avoid repeating information, and clear handoffs ensure that people can step in when needed. Staff can handle more enquiries without monitoring each channel separately.",
     cover: supportAgentCover,
     coverColor: "#8B5CF6",
-    video: supportAgentVideo.url,
+    video: "/videos/multi_channel_support_walkthrough.mp4",
     screenshots: [
-      { url: "/assets/projects/support_agent_1.png", caption: "n8n workflow — Multi Channel AI Support Agent" },
-      { url: "/assets/projects/support_agent_2.png", caption: "Full workflow canvas with the supporting sub workflows" },
-      { url: "/assets/projects/support_agent_3.png", caption: "Internal Escalation Reminder workflow" },
+      { url: "/assets/projects/support_agent_1.png", caption: "Multi Channel AI Support Agent full workflow canvas" },
+      { url: "/assets/projects/support_agent_3.png", caption: "Internal escalation reminder workflow" },
       { url: "/assets/projects/support_agent_4.png", caption: "Knowledge Base Ingestion workflow" },
       { url: "/assets/projects/support_agent_5.png", caption: "Escalation Status Update workflow" },
-      { url: "/assets/projects/support_agent_6.png", caption: "Central Error Monitoring & Notifications workflow" },
+      { url: "/assets/projects/support_agent_6.png", caption: "Central error monitoring and notifications workflow" },
       { url: "/assets/projects/support_agent_7.png", caption: "Website chat widget answering a customer enquiry" },
       { url: "/assets/projects/support_agent_8.png", caption: "Human escalation email with full customer context" },
-      { url: "/assets/projects/support_agent_9.png", caption: "Gab 9: Customer records across channels" },
-      { url: "/assets/projects/support_agent_10.png", caption: "Gab 10: Customer conversations and responses" },
-      { url: "/assets/projects/support_agent_11.png", caption: "Gab 11: Customer support knowledge base documents" },
-      { url: "/assets/projects/support_agent_12.png", caption: "Gab 12: Persistent customer chat history" },
+      { url: "/assets/projects/support_agent_9.png", caption: "Customer records across all channels" },
+      { url: "/assets/projects/support_agent_10.png", caption: "Customer conversations across all channels" },
+      { url: "/assets/projects/support_agent_11.png", caption: "Customer support knowledge base documents" },
+      { url: "/assets/projects/support_agent_12.png", caption: "AI agent conversation memory" },
     ],
   },
   {
     id: "whatsapp-ordering-agent",
     title: "WhatsApp Ordering AI Agent",
     description:
-      "An AI powered WhatsApp waiter for a restaurant that handles the entire ordering process end to end, from answering menu questions to notifying the kitchen with no staff involvement.",
+      "A WhatsApp assistant for a restaurant that handles orders from menu questions through kitchen notifications, with no manual staff handoff for routine orders.",
     tags: ["n8n", "WhatsApp", "Google Gemini", "Supabase", "Google Sheets", "Telegram"],
     problem:
       "Restaurants weren't losing customers over food quality, they were losing them in chats staff couldn't keep up with. The same questions got answered over and over, and every order had to be manually taken and tracked, pulling staff away from the floor and slowing down service during busy hours.",
     process: [
       "A customer messages on WhatsApp and the AI responds immediately, answering questions using a fixed knowledge base and handling the conversation like a human waiter would.",
-      "The AI takes the order, asks for the customer's name and phone number, and confirms pickup or delivery — collecting the address only if delivery is chosen.",
+      "The assistant takes the order, asks for the customer's name and phone number, and confirms pickup or delivery. It collects an address only for deliveries.",
       "Each finalized order gets a unique ID and is logged into Google Sheets with the customer's details.",
       "A 3-minute edit window opens after the order is finalized, during which the customer can request changes and the AI updates the order accordingly.",
       "Once the window closes, no further changes are accepted, and the kitchen is automatically notified on Telegram with the finalized order.",
     ],
     result:
-      "Every customer gets a fast, natural ordering experience without waiting on staff, every order lands in the kitchen structured and accurate, and requests for anything outside the menu are handled professionally instead of guessed at.",
+      "Customers can place orders without waiting for staff, and each confirmed order reaches the kitchen in a clear format. Requests about items outside the menu are handled without guessing.",
     impact:
-      "The restaurant can handle more orders at once without adding staff. Customers get a consistent, human like experience any time of day, and the kitchen receives clean, ready to execute orders instead of chasing down details mid rush.",
+      "The restaurant can handle more orders without adding staff. Customers receive consistent service throughout the day, and the kitchen gets complete orders instead of having to chase down details during a rush.",
     cover: whatsappCover,
     coverColor: "#3B82F6",
     screenshots: [
-      { url: order.url, caption: "n8n workflow — BML Restaurant Chat Assistant" },
+      { url: order.url, caption: "Restaurant Chat Assistant workflow" },
       { url: order1.url, caption: "Kitchen Timer workflow" },
       { url: order3.url, caption: "Order Editable workflow" },
       { url: order5.url, caption: "Restaurant Orders sheet" },
@@ -129,25 +127,25 @@ const projectCatalog: Project[] = [
     id: "lead-generation-engine",
     title: "Lead Generation & Outreach Engine",
     description:
-      "An automated outbound pipeline that identifies high value prospects, generates personalized cold outreach, and manages a structured follow up sequence. It automatically stops the moment a lead replies.",
+      "An outbound pipeline that finds suitable prospects, prepares personalized outreach, and schedules follow up emails. Follow ups stop when a prospect replies.",
     tags: ["n8n", "Google Sheets", "Apify", "Firecrawl", "OpenAI", "Gmail"],
     problem:
-      "Manually identifying prospects, verifying contact details, and drafting individual outreach emails was slow and limited outbound volume. Tracking who had been followed up with, and when, was inconsistent. This caused warm leads to go cold from missed timing, and sometimes led to active conversations getting an automated follow-up after the lead had already replied.",
+      "Finding prospects, checking their contact details, and drafting outreach emails by hand took time and limited the number of businesses the team could contact. Follow up tracking was inconsistent, which sometimes meant a prospect received another email after already replying.",
     process: [
       "Web scraping engines extract lead data from targeted websites based on search parameters.",
       "An AI agent analyzes each lead's site to identify specific technical and operational gaps.",
       "A personalized pitch is generated based on those gaps, and the initial outreach email is sent.",
-      "If a lead hasn't replied, up to 4 follow-ups are sent at 3, 7, 14, and 28 day intervals.",
-      "The system checks for a reply before each follow-up. Stops follow-ups if the lead has responded, and notifies the internal team to continue the conversation.",
+      "If a prospect has not replied, the system sends up to four follow up emails after 3, 7, 14, and 28 days.",
+      "Before each follow up, the system checks for a reply. If the prospect has responded, it stops sending emails and notifies the team to continue the conversation.",
     ],
     result:
-      "Raw prospect data is automatically turned into structured, ready to contact records, with a personalized outreach pitch generated and sent for every lead. A structured follow up sequence runs after that, and hands off to a human as soon as a real conversation starts.",
+      "Prospect information is organized into contact records, and each prospect receives a tailored outreach email. The scheduled follow up sequence stops as soon as a real conversation begins.",
     impact:
-      "No lead goes cold from missed timing, and no lead gets a follow up after they have already replied. About 15 hours a week are returned to the team previously auditing sites manually, writing individual emails, and tracking who needed a follow up.",
+      "The team avoids missed follow ups and does not send scheduled emails after a prospect replies. The process also returns about 15 hours each week previously spent reviewing websites, writing emails, and tracking outreach.",
     cover: leadgenCover,
     coverColor: "#9333EA",
     screenshots: [
-      { url: lead.url, caption: "n8n workflow — Lead Gen + Outreach" },
+      { url: lead.url, caption: "Lead generation and outreach workflow" },
       { url: lead1.url, caption: "Follow-up scheduler workflow" },
       { url: lead2.url, caption: "Automation Lead sheet" },
     ],
@@ -156,10 +154,10 @@ const projectCatalog: Project[] = [
     id: "restaurant-menu-cost-planner",
     title: "Restaurant Menu & Cost Planner",
     description:
-      "A custom built Airtable base built for a Nigerian restaurant to manage recipes, track changing market prices, and automatically calculate daily meal prep costs.",
+      "An Airtable base for a Nigerian restaurant to manage recipes, track changing market prices, and calculate daily meal preparation costs.",
     tags: ["Airtable"],
     problem:
-      "The restaurant had a hard time figuring out the exact cost of their dishes because local market prices for ingredients kept changing. Doing the math manually in normal spreadsheets led to budgeting mistakes, and figuring out what to buy for the daily market run took up way too much time.",
+      "Changing local market prices made it difficult to know the exact cost of each dish. Calculating costs in spreadsheets led to budgeting mistakes, and planning purchases for the daily market trip took time.",
     process: [
       "I set up a main ingredient list to track the current market price for every single item.",
       "I built detailed recipes and linked them directly to those specific ingredients.",
@@ -168,9 +166,9 @@ const projectCatalog: Project[] = [
       "A custom calculator instantly adds up the total grocery expenses for the planned menu.",
     ],
     result:
-      "Now whenever the restaurant plans their menu, the system instantly gives them an accurate cost breakdown. The kitchen staff can clearly see the daily cooking schedule on a visual calendar, and the manager knows exactly how much the market run will cost without having to do any manual math.",
+      "When the restaurant plans its menu, the base provides an up to date cost breakdown. Kitchen staff can see the daily cooking schedule, and managers can estimate market expenses without calculating each dish by hand.",
     impact:
-      "Budgeting is now completely accurate and happens on autopilot. The restaurant stops losing money on bad cost estimates, and the management team saves hours they used to spend crunching numbers so they can actually focus on running the business.",
+      "The updated cost calculations give managers a clearer basis for budgeting and reduce time spent checking figures by hand. The team can focus more on running the restaurant and less on spreadsheet calculations.",
     cover: menuCostCover,
     coverColor: "#7B5EA7",
     screenshots: [
@@ -194,7 +192,7 @@ const projectCatalog: Project[] = [
       "Estimate requests and general enquiries were arriving through the site with no consistent response window. Motivated buyers ready to book would move on to a competitor before the team saw the message, and general enquiries often sat unanswered long enough that people assumed the form hadn't submitted.",
     process: [
       "A form submission on the website triggers the workflow instantly. Estimate requests and general contact messages are handled on separate tracks.",
-      "For estimate requests: the lead is automatically scored, logged to a spreadsheet, and sent a branded quote email — all within 60 seconds.",
+      "Estimate requests are scored, logged to a spreadsheet, and sent as a branded quote email within 60 seconds.",
       "For general contact form submissions: an instant acknowledgment email is sent confirming the message was received.",
       "The crew is alerted in the team's messaging app with the relevant lead details.",
     ],
@@ -245,7 +243,7 @@ const projectCatalog: Project[] = [
     id: "invoice-collection",
     title: "Invoice Collection Pipeline",
     description:
-      "A continuous accounts receivable pipeline that monitors invoice statuses, algorithmically calculates overdue thresholds, and dispatches hyper personalized, AI driven escalation emails at strict intervals to accelerate cash flow recovery.",
+      "An accounts receivable workflow that tracks invoice status, identifies overdue accounts, and sends tailored reminder emails at set intervals.",
     tags: ["n8n", "Google Sheets", "Google Gemini", "Gmail"],
     problem:
       "Organizations lose predictable cash flow and waste critical resources manually tracking overdue invoices. Traditional billing systems rely on static, easily ignored reminders that fail to address client specific nuances. Without continuous oversight and structured escalation intervals, overdue balances compound, tracking gaps widen, and collections stall, directly harming operational liquidity.",
@@ -259,13 +257,13 @@ const projectCatalog: Project[] = [
     result:
       "An end to end automated collection framework that eliminates manual tracking entirely. The pipeline tracks payment status, isolates overdue accounts, and uses AI to generate and send custom, escalating email sequences that protect client relationships while accelerating payment.",
     impact:
-      "Faster average follow up. Reminders go out the day an account crosses a threshold, not whenever someone gets to it. ~10 hours/week returned to the finance team.",
+      "Reminders go out as soon as an account reaches an overdue threshold instead of waiting for someone to check manually. This returns about 10 hours each week to the finance team.",
     cover: invoiceCover,
     coverColor: "#2563EB",
     screenshots: [
       { url: bmlInvoice.url, caption: "n8n workflow — BML Invoice Collection System" },
       { url: bmlInvoice2.url, caption: "Invoice tracking sheet" },
-      { url: bmlInvoice1.url, caption: "AI-generated follow-up email" },
+      { url: bmlInvoice1.url, caption: "Personalized invoice reminder email" },
     ],
   },
   {
@@ -283,9 +281,9 @@ const projectCatalog: Project[] = [
       "The AI agent evaluates compatibility and outputs a qualification score against a set compliance threshold.",
     ],
     result:
-      "The automation filters out low scoring opportunities and maps high value, highly compatible grants directly into a central tracking database. By replacing manual vetting with automated AI scoring, the system eliminates hours of manual research and ensures the hospital instantly prioritizes top tier funding matches.",
+      "The system filters out low scoring opportunities and adds grants that meet the hospital's criteria to a shared tracker. This reduces time spent reviewing grants and helps staff prioritize suitable funding opportunities.",
     impact:
-      "Grants that match the hospital's criteria get identified and flagged consistently, instead of relying on manual research that can miss high value opportunities. Application drafts are ready in minutes instead of weeks, freeing healthcare staff to stay focused on clinical work.",
+      "Suitable grants are identified and flagged more consistently than they would be through manual research alone. Draft applications are prepared sooner, giving healthcare staff more time for clinical work.",
     cover: grantCover,
     coverColor: "#A855F7",
     screenshots: [
@@ -294,7 +292,7 @@ const projectCatalog: Project[] = [
       { url: bmlGrant9.url, caption: "Scheduler + Reminder workflow" },
       { url: bmlGrant3.url, caption: "Grant Details sheet" },
       { url: bmlGrant1.url, caption: "Hospital profile sheet" },
-      { url: bmlGrant4.url, caption: "Grant–Hospital match tracker" },
+      { url: bmlGrant4.url, caption: "Grant and hospital match tracker" },
       { url: bmlGrant2.url, caption: "AI-drafted proposal notification" },
     ],
   },
