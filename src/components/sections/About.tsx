@@ -5,27 +5,27 @@ const profileAsset = "/assets/portrait.png?v=1";
 const resumeAsset = "/assets/docs/Resume.pdf";
 
 const highlights = [
-  "Built Reliable, Production Grade Automation Workflows",
-  "End to End Systems That Work Around the Clock",
-  "Smart Automation that helps Businesses Save Time & Reduce Manual Work",
+  "Reliable workflows, ready for production",
+  "Connected systems that run around the clock",
+  "Practical tools that reduce repetitive work",
 ];
 
 const values = [
   {
-    title: "Mapped Before It's Built",
-    body: "Before building a single workflow, every process gets mapped from start to finish, so what's delivered holds up in production and scales as you grow, not just looks good in a demo.",
+    title: "Plan Before Building",
+    body: "I map each process before building so the finished system works in day to day use and can grow with your business, not just look good in a demo.",
   },
   {
     title: "Transparent by Design",
-    body: "You'll always understand what's automated and how to change it later if you need to.",
+    body: "You will know what is automated and how to make changes when your process evolves.",
   },
   {
     title: "Tested Under Real Conditions",
-    body: "Every system gets checked under real conditions before you ever have to rely on it.",
+    body: "I test every system with realistic scenarios before it becomes part of your team's work.",
   },
   {
     title: "Delivered on Schedule",
-    body: "Deadlines are treated as commitments. You'll always know where things stand.",
+    body: "I keep agreed deadlines and let you know how the work is progressing.",
   },
 ];
 
@@ -67,19 +67,17 @@ export function About() {
           <div className="mt-8 space-y-6">
             <Reveal delay={80}>
               <p className="text-lg leading-relaxed text-foreground/90">
-                I'm an AI Automation Specialist helping businesses replace manual,
-                repetitive work with intelligent systems that run on their own. My work
-                spans lead capture and auto follow up workflows, AI agents for automated
-                customer interaction, and end to end automations across RAG pipelines,
-                agentic systems, and voice agents.
+                I'm an automation specialist helping businesses reduce repetitive
+                work with systems that are practical to use and maintain. My work
+                includes lead intake and follow up, customer support, document search,
+                and voice assistants when they suit the task.
               </p>
             </Reveal>
             <Reveal delay={140}>
               <p className="text-base leading-relaxed text-muted-foreground">
-                What sets my work apart is a focus on systems that keep working under
-                real conditions and drive positive ROI for businesses. I build with
-                longevity in mind. Every system is designed to reduce manual work and
-                keep operations running without constant oversight.
+                I focus on systems that work reliably in everyday business conditions.
+                Each project is built to reduce manual tasks and fit into the way your
+                team already works, without adding unnecessary upkeep.
               </p>
             </Reveal>
 

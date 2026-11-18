@@ -7,9 +7,9 @@ import { Skills } from "../components/sections/Skills";
 import { Contact } from "../components/sections/Contact";
 import { SITE_URL, OG_IMAGE } from "../lib/site";
 
-const TITLE = "Mojeed Automates — AI Systems Architect & Automation Specialist";
+const TITLE = "Mojeed Salisu | Business Automation and AI Systems";
 const DESCRIPTION =
-  "AI agents, RAG systems, and end-to-end automations that replace manual work with systems that run on their own.";
+  "Mojeed Salisu builds practical business automation systems that connect existing tools, reduce repetitive work, and support customer service.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

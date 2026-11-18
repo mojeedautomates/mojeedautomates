@@ -21,11 +21,11 @@ export function ProjectsSection({ preview = false }: Props) {
             {preview ? "Featured Work" : "Projects"}
           </div>
           <h2 className="mt-3 text-4xl sm:text-5xl font-bold tracking-tight max-w-3xl mx-auto">
-            Automation That Actually{" "}
-            <span className="text-[#7B5EA7]">Runs The Business.</span>
+            Less manual work. More time for{" "}
+            <span className="text-[#7B5EA7]">the work that matters.</span>
           </h2>
           <p className="mt-5 text-muted-foreground max-w-2xl mx-auto">
-            How Automation Solved Real World Business Problems.
+            A closer look at the tools, workflows, and problems behind each project.
           </p>
         </div>
       </Reveal>

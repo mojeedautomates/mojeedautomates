@@ -3,7 +3,7 @@ import { Contact } from "../components/sections/Contact";
 import { SITE_URL, OG_IMAGE } from "../lib/site";
 
 const TITLE = "Contact — Mojeed Automates";
-const DESCRIPTION = "Get in touch to automate the workflows eating your week.";
+const DESCRIPTION = "Contact Mojeed Salisu to discuss business workflows you would like to improve or automate.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

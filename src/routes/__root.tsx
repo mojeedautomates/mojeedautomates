@@ -80,26 +80,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Mojeed Automates — AI Systems Architect & Automation Specialist" },
+      { title: "Mojeed Salisu | Business Automation and AI Systems" },
       {
         name: "description",
         content:
-          "Mojeed builds AI agents, custom RAG systems, and end-to-end automations for businesses drowning in manual work.",
+          "Mojeed Salisu builds practical business automation systems that connect existing tools, reduce repetitive work, and support customer service.",
       },
       { name: "author", content: "Mojeed Automates" },
-      { property: "og:title", content: "Mojeed Automates — AI Systems Architect & Automation Specialist" },
+      { property: "og:title", content: "Mojeed Salisu | Business Automation and AI Systems" },
       {
         property: "og:description",
         content:
-          "Mojeed builds AI agents, custom RAG systems, and end-to-end automations for businesses drowning in manual work.",
+          "Mojeed Salisu builds practical business automation systems that connect existing tools, reduce repetitive work, and support customer service.",
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Mojeed Automates" },
       { name: "theme-color", content: "#7B5EA7" },
       { name: "robots", content: "index, follow" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Mojeed Automates — AI Systems Architect & Automation Specialist" },
-      { name: "twitter:description", content: "Mojeed builds AI agents, custom RAG systems, and end-to-end automations for businesses drowning in manual work." },
+      { name: "twitter:title", content: "Mojeed Salisu | Business Automation and AI Systems" },
+      { name: "twitter:description", content: "Mojeed Salisu builds practical business automation systems that connect existing tools, reduce repetitive work, and support customer service." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

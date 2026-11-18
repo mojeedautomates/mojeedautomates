@@ -3,7 +3,7 @@ import { ProjectsSection } from "../components/sections/Projects";
 import { SITE_URL, OG_IMAGE } from "../lib/site";
 
 const TITLE = "Projects — Mojeed Automates";
-const DESCRIPTION = "A portfolio of AI agents, RAG systems, and end-to-end automations built for real teams.";
+const DESCRIPTION = "Examples of practical automation workflows built to improve customer support, lead follow up, and everyday business operations.";
 
 export const Route = createFileRoute("/projects/")({
   head: () => ({

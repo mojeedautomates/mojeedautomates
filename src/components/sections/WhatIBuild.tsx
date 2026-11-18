@@ -6,22 +6,22 @@ export function WhatIBuild() {
     {
       icon: Bot,
       title: "AI Agents",
-      body: "Autonomous agents that qualify leads, answer support, and take real action across your tools.",
+      body: "AI assistants that sort enquiries, answer support questions, and carry out tasks across your tools.",
     },
     {
       icon: Database,
       title: "RAG Pipelines",
-      body: "Custom knowledge systems trained on your docs, tickets, and SOPs with citations, not guesses.",
+      body: "Search tools that find relevant information in your documents, support tickets, and procedures, with sources to check.",
     },
     {
       icon: Workflow,
-      title: "End-to-End Automations",
-      body: "Multi step workflows connecting your CRM, forms, calendars, and databases into one system.",
+      title: "Connected Workflows",
+      body: "Workflows that connect your customer records, forms, calendars, and data in one place.",
     },
     {
       icon: Users,
       title: "Lead Generation Systems",
-      body: "Inbound and outbound lead engines that capture, enrich, qualify, and follow up automatically.",
+      body: "Lead workflows that collect enquiries, organize contact details, and send timely follow up messages.",
     },
   ];
 

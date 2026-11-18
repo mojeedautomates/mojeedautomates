@@ -29,16 +29,15 @@ export function Hero() {
         <div className="max-w-3xl animate-fade-up">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 backdrop-blur px-3 py-1 text-xs font-medium text-foreground">
             <Sparkles size={12} style={{ color: "#7B5EA7" }} />
-            AI-Powered Automation Systems
+            Practical automation for business
           </div>
           <h1 className="mt-6 text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.02]">
-            AI Systems Architect &{" "}
-            <span className="text-gradient-gold">Automation Specialist</span>
+            AI Automation Specialist
           </h1>
           <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
-            I build AI agents, custom RAG systems, and end to end automations for
-            businesses drowning in manual work, connecting their tools, data, and
-            workflows into one system that runs on its own.
+            I build practical workflows and AI tools that connect your existing
+            systems, reduce repetitive tasks, and give your team more time for the
+            work that needs their attention.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link

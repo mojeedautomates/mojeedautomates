@@ -3,7 +3,7 @@ import { Skills } from "../components/sections/Skills";
 import { SITE_URL, OG_IMAGE } from "../lib/site";
 
 const TITLE = "Skills — Mojeed Automates";
-const DESCRIPTION = "The stack behind the systems — automation tools, AI models, and delivery process.";
+const DESCRIPTION = "The automation tools, data services, AI models, and delivery practices Mojeed uses to build business workflows.";
 
 export const Route = createFileRoute("/skills")({
   head: () => ({

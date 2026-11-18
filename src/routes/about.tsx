@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { About } from "../components/sections/About";
 import { SITE_URL, OG_IMAGE } from "../lib/site";
 
-const TITLE = "About — Mojeed Automates";
-const DESCRIPTION = "About Mojeed Salisu — AI Automation Specialist building systems that keep businesses running.";
+const TITLE = "About Mojeed Salisu | Business Automation Specialist";
+const DESCRIPTION = "Meet Mojeed Salisu and learn about his practical approach to improving everyday business workflows.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
